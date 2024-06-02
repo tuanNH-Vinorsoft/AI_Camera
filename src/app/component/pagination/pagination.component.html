@@ -1,0 +1,23 @@
+<div ngClass="{'content': true, 'hide': isFullScreen}" class="pagination-content">
+    <span (click)="onPrevious()" class="icon">
+      <span nz-icon nzType="left" nzTheme="outline"></span>
+    </span>
+
+    <ng-container *ngFor="let item of pageNumbers; let i = index">
+      <ng-container *ngIf="i > 0 && item - pageNumbers[i - 1] > 1">
+        <span>...</span>
+      </ng-container>
+      <span class="pagination-page"
+        (click)="onPageClick(item)"
+        [ngClass]="{'page': true, 'active': item === currentPage}"
+        [ngStyle]="{'border-radius': '50%'}"
+      >
+        {{ item }}
+      </span>
+    </ng-container>
+
+    <span (click)="onNext()" class="icon">
+      <span nz-icon nzType="right" nzTheme="outline"></span>
+    </span>
+  </div>
+  

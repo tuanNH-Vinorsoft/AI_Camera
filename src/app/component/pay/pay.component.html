@@ -1,0 +1,51 @@
+<div class="container-full">
+    <div class="container-text">
+        <a class="button-back" [routerLink]="['/administrator/register-service/',0]">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <g clip-path="url(#clip0_1_2647)">
+                <path d="M15 6L9 12L15 18" stroke="black" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                </g>
+                <defs>
+                <clipPath id="clip0_1_2647">
+                <rect width="24" height="24" fill="white"/>
+                </clipPath>
+                </defs>
+            </svg>
+        </a>
+        <span>Thanh toán</span>
+    </div>
+
+    <div class="container-text-line"></div>
+
+    <div class="container-item">
+        <div class="item-qr">
+            <img src="/assets/images/qr.png" alt="">
+        </div>
+        <div class="item-bill">
+            <div class="bill-text">Thông tin thanh toán</div>
+
+            <div style="display: grid; gap: 12px;" *ngFor="let item of listInformation">
+                <div class="bill-info">
+                    <div style="
+                        display: block;
+                        text-align: start;
+                    ">
+                        <span class="bill-info-name" >{{item.name}}</span >
+                    </div>
+                    <div style="
+                        display: block;
+                        text-align: end;
+                    ">
+                        <span class="bill-info-content" >{{item.note}}</span>
+                    </div>
+                </div>
+                <nz-divider [ngStyle]="{'display': item.name=='Nội dung' ? 'none' : ''}" style="margin: 0;"></nz-divider>
+                <!-- <div [ngStyle]="{'display': item.name=='Nội dung' ? 'none' : ''}" class="bill-line" ></div> -->
+            </div>
+
+            <div class="bill-button">
+                <a href="">Cập nhập thanh toán</a>
+            </div>
+        </div>
+    </div>
+</div>

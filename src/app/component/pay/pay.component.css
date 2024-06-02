@@ -1,0 +1,138 @@
+.container-full {
+    width: 100%;
+    height: 100%;
+    border-left-width: 2px;
+    border-left-style: solid;
+    border-color: rgba(0, 0, 0, 0.05);
+}
+
+.container-text {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    height: 56px;
+    gap: 4px;
+    background: #FFFFFF;
+    padding-left: 10px;
+}
+
+.button-back {
+    display: flex;
+    align-items: center;
+}
+
+.container-text span {
+    height: 32px;
+    font-family: 'Averta Std CY';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 32px;
+    color: #000000;
+}
+
+.container-text-line {
+    border: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.container-item {
+    width: 100%;
+    border-radius: 4px;
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    flex-wrap: wrap;
+    padding: 35px 10px 0 10px;
+    gap: 20px
+}
+
+.item-qr {
+    width: fit-content;
+    height: fit-content;
+}
+
+.item-bill {
+    display: flex;
+    flex-direction: column;
+    padding: 0px;
+    gap: 12px;
+    width: fit-content;
+    /* padding-left: 25px; */
+}
+
+.bill-text {
+    font-family: 'Averta Std CY';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 32px;
+    color: #000000;
+}
+
+.bill-info {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.bill-info-name {
+    font-family: 'Averta Std CY';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 9px;
+    color: rgba(0, 0, 0, 0.4);
+}
+
+.bill-info-content {
+    font-family: 'Averta Std CY';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 9px;
+    color: #000000;
+}
+
+.bill-line {
+    border: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.bill-button {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 12px 20px;
+    gap: 10px;
+    height: 40px;
+    background: #0040FF;
+    border-radius: 4px;
+}
+
+.bill-button a {
+    text-decoration: none;
+    font-family: 'Averta Std CY';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 24px;
+    color: #FFFFFF;
+}
+
+@media screen and (max-width: 1000px) {
+    .container-item {
+        height: auto;
+        gap: 30px
+    }
+
+    .item-bill {
+        width: 90%;
+    }
+}
+
+@media screen and (min-width: 1000px) {
+    .item-bill {
+        max-width: 500px;
+        width: 50%;
+    }
+}

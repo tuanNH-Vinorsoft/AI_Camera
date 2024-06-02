@@ -1,0 +1,180 @@
+.container-full {
+    width: 100%;
+    height: 100%;
+}
+.container-text {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    height: 56px;
+    background: #FFFFFF;
+    padding-left: 10px;
+}
+
+.container-text a {
+    width: 151px;
+    height: 32px;
+    font-family: 'Averta Std CY';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 32px;
+    color: #000000;
+}
+
+.container-text-line {
+    border: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.container-list {
+    width: 100%;
+    display: flex;
+    padding: 10px 10px 0 10px;
+    background-color: #FFFFFF;
+}
+
+.container-list-line {
+    width: 93.5%;
+    border: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.container-item {
+    height: 100%;
+    margin-right: 15px;
+    padding-bottom: 10px;
+}
+
+.item-link {
+    font-family: 'Averta Std CY';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 24px;
+    color: rgba(0, 0, 0, 0.4);
+    text-decoration: none;
+}
+
+.container-item:nth-of-type(2) .item-link{
+    color: #0040FF
+}
+
+.container-item:nth-of-type(2) {
+    /* border-radius: 2px; */
+    border-bottom-width: 2px;
+    border-bottom-style: solid;
+    border-color: #0040FF;
+}
+
+.service-list {
+    width: 100%;
+    height: fit-content;
+    display: flex;
+    padding-top: 10px;
+    flex-wrap: nowrap;
+    flex-direction: column;
+    overflow: auto;
+    padding: 12px 16px 24px 16px;
+    background-color: #FFFFFF;
+}
+
+.service-sreach {
+    width: 100%;
+    display: flex;
+    flex-wrap: nowrap;
+    padding: 0;
+    gap: 8px;
+    font-family: 'Averta Std CY';
+    align-items: flex-start;
+    justify-content: space-between;
+    flex-direction: column;
+    padding-bottom: 12px;
+}
+
+.sreach-text {
+    font-family: 'Averta Std CY';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 20px;
+    color: rgba(0, 0, 0, 0.7);
+}
+
+.sreach-input {
+    display: flex;
+    align-items: center;
+    box-sizing: border-box;
+    width: 280px;
+    height: 36px;
+    background: #FFFFFF;
+    font-family: 'Averta Std CY';
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    border-radius: 4px;
+}
+
+.input-button {
+    padding: 0 10px;
+    display: flex;
+}
+
+.sreach-input input {
+    font-family: 'Averta Std CY';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 24px;
+    width: 100%;
+    border: 0;
+    outline: none;
+    color: rgba(0, 0, 0, 0.7);
+}
+
+.service-table {
+    width: 100%;
+    height: auto;
+    overflow: auto;
+    border-radius: 10px;
+}
+
+.scoll-bar::-webkit-scrollbar {
+    width: 5px !important;
+}
+
+.scoll-bar::-webkit-scrollbar-thumb {
+    background-color: rgba(0, 0, 0, 0.2) !important;
+    border-radius: 4px !important;
+}
+
+.scoll-bar-ver::-webkit-scrollbar {
+    width: 0px !important;
+    height: 5px !important;
+}
+
+.scoll-bar-ver::-webkit-scrollbar-thumb {
+    background-color: rgba(0, 0, 0, 0.2) !important;
+    border-radius: 4px !important;
+}
+
+.list-pagination {
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+
+.font-size-head {
+    font-family: Averta Std CY;
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 20px;
+    color: #000000;
+}
+
+.font-size-body {
+    font-family: 'Averta Std CY';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 20px;
+    color: rgba(0, 0, 0, 0.7);
+}

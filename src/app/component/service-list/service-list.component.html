@@ -1,0 +1,532 @@
+<div class="container-full">
+  <div class="container-text">
+    <a [routerLink]="['/administrator']">Quản trị camera</a>
+  </div>
+
+  <nz-divider style="margin: 0"></nz-divider>
+
+  <div class="service-list">
+    <div class="service-head">
+      <div class="service-sreach">
+        <div class="sreach-name">
+          <div class="sreach-text">Tìm kiếm theo tên camera</div>
+          <div class="sreach-input">
+            <div class="input-button">
+              <svg
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <g clip-path="url(#clip0_1_4264)">
+                  <path
+                    d="M10 17C13.866 17 17 13.866 17 10C17 6.13401 13.866 3 10 3C6.13401 3 3 6.13401 3 10C3 13.866 6.13401 17 10 17Z"
+                    stroke="black"
+                    stroke-width="1.5"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                  <path
+                    d="M21 21L15 15"
+                    stroke="black"
+                    stroke-width="1.5"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                </g>
+                <defs>
+                  <clipPath id="clip0_1_4264">
+                    <rect width="24" height="24" fill="white" />
+                  </clipPath>
+                </defs>
+              </svg>
+            </div>
+            <input
+              type="text"
+              placeholder="Nhập từ khoá"
+              [(ngModel)]="cameraName"
+              (input)="onNameChange($event)"
+            />
+          </div>
+        </div>
+        <div class="sreach-day">
+          <div class="sreach-day-start">
+            <div class="sreach-text">Thời gian bắt đầu</div>
+            <div class="sreach-input">
+              <nz-date-picker
+                class="date-picker"
+                nzShowTime
+                nzFormat="dd/MM/yyyy HH:mm "
+                nzPlaceHolder="Chọn ngày"
+                [(ngModel)]="dateStart"
+                (ngModelChange)="onStartChange($event)"
+                onkeypress="'Xac nhan'"
+              ></nz-date-picker>
+            </div>
+          </div>
+          <div class="sreach-day-end">
+            <div class="sreach-text">Thời gian kết thúc</div>
+            <div class="sreach-input">
+              <nz-date-picker
+                class="date-picker"
+                nzShowTime
+                nzFormat="dd/MM/yyyy HH:mm "
+                nzPlaceHolder="Chọn ngày"
+                [(ngModel)]="dateEnd"
+                (ngModelChange)="onEndChange($event)"
+              ></nz-date-picker>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="service-check">
+        <div class="check-click">
+          <div class="sreach-text">Trạng thái hoạt động</div>
+          <div class="check-button">
+            <label
+              nz-checkbox
+              [(ngModel)]="checkOn"
+              (ngModelChange)="onOnChange($event)"
+            >
+              <span class="check-text">Đang hoạt động</span>
+            </label>
+            <label
+              nz-checkbox
+              [(ngModel)]="checkOff"
+              (ngModelChange)="onOffChange($event)"
+            >
+              <span class="check-text">Đang tắt</span>
+            </label>
+          </div>
+        </div>
+        <div class="button-all">
+          <button (click)="clickAll()" class="button-unfilter-all">
+            Bỏ lọc tất cả
+          </button>
+          <button class="button-apply">Áp dụng</button>
+        </div>
+      </div>
+    </div>
+    // select copy
+    <!-- <div
+      class="SelectBox_select-box__n+KIA Filter_select__BtbJ8"
+      style="padding-top: 8px"
+      bis_skin_checked="1"
+    >
+      <div
+        class="SelectBox_select__ZnWua SelectBox_small__voHV+"
+        bis_skin_checked="1"
+      >
+        <div class="SelectBox_input-select__eBYr9" bis_skin_checked="1">
+          <div class="SelectBox_input__ld1G5" bis_skin_checked="1">
+            <div class="SelectBox_value__QHcIh" bis_skin_checked="1">
+              Tất cả
+            </div>
+          </div>
+          <div class="SelectBox_icon__oyv8P" bis_skin_checked="1">
+            <svg
+              width="20"
+              height="20"
+              viewBox="0 0 20 20"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <g clip-path="url(#clip0_4472_13009)">
+                <path
+                  d="M5 7.5L10 12.5L15 7.5"
+                  stroke="black"
+                  stroke-opacity="1"
+                  stroke-width="1.25"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                ></path>
+              </g>
+              <defs>
+                <clipPath id="clip0_4472_13009">
+                  <rect width="20" height="20" fill="white"></rect>
+                </clipPath>
+              </defs>
+            </svg>
+          </div>
+        </div>
+        <div class="SelectBox_top-box__yMLLD" bis_skin_checked="1"></div>
+      </div>
+    </div> -->
+
+    <div class="service-table scoll-bar">
+      <div style="overflow: auto; width: 100%" class="scoll-bar-ver">
+        <!-- <table style="width: 100%">
+          <thead style="background-color: #f8f8f8" class="font-size-head">
+            <tr>
+              <th
+                style="width: 5%; padding: 14px 0 14px 16px; font-weight: 600"
+              >
+                STT
+              </th>
+              <th
+                style="width: 20%; padding: 14px 0 14px 16px; font-weight: 600"
+              >
+                <div
+                  style="
+                    width: 100%;
+                    display: flex;
+                    justify-content: start;
+                    align-items: center;
+                    text-align: center;
+                  "
+                >
+                  Tên camera
+                </div>
+              </th>
+              <th
+                style="width: 17%; padding: 14px 0 14px 16px; font-weight: 600"
+              >
+                <div
+                  style="
+                    width: 100%;
+                    display: flex;
+                    justify-content: start;
+                    align-items: center;
+                  "
+                >
+                  Thời gian bắt đầu hoạt động
+                </div>
+              </th>
+              <th
+                style="width: 17%; padding: 14px 0 14px 16px; font-weight: 600"
+              >
+                <div
+                  style="
+                    width: 100%;
+                    display: flex;
+                    justify-content: start;
+                    align-items: center;
+                  "
+                >
+                  Thời gian kết thúc hoạt động
+                </div>
+              </th>
+              <th
+                style="width: 15%; padding: 14px 0 14px 16px; font-weight: 600"
+              >
+                <div
+                  style="
+                    width: 100%;
+                    display: flex;
+                    justify-content: start;
+                    align-items: center;
+                  "
+                >
+                  Trạng thái
+                </div>
+              </th>
+              <th
+                style="width: 13%; padding: 14px 0 14px 16px; font-weight: 600"
+              >
+                <div
+                  style="
+                    width: 100%;
+                    display: flex;
+                    justify-content: start;
+                    align-items: center;
+                  "
+                >
+                  Thời gian bắt đầu
+                </div>
+              </th>
+              <th
+                style="width: 13%; padding: 14px 0 14px 16px; font-weight: 600"
+              >
+                <div
+                  style="
+                    width: 100%;
+                    display: flex;
+                    justify-content: start;
+                    align-items: center;
+                  "
+                >
+                  Thời gian kết thúc
+                </div>
+              </th>
+            </tr>
+          </thead>
+          <tbody style="" class="font-size-body">
+            <tr
+              *ngFor="
+                let data of filteredCameras
+                  | slice
+                    : (currentPage - 1) * pageSize
+                    : currentPage * pageSize;
+                let i = index
+              "
+              style="width: auto"
+            >
+              <td style="width: 5%; padding: 8px 0 8px 16px">
+                <div
+                  style="
+                    width: 100%;
+                    display: block;
+                    align-items: center;
+                    text-align: center;
+                  "
+                >
+                  {{ i + 1 }}
+                </div>
+              </td>
+              <td style="width: 20%; padding: 8px 0 8px 16px">
+                <div
+                  style="
+                    width: 100%;
+                    display: flex;
+                    justify-content: flex-start;
+                    align-items: center;
+                    gap: 8px;
+                  "
+                >
+                  <img src="/assets/icon/blue.png" alt="" />
+                  {{ data.name }}
+                </div>
+              </td>
+              <td style="width: 17%; padding: 8px 0 8px 16px">
+                <div
+                  style="
+                    width: 100%;
+                    display: flex;
+                    justify-content: start;
+                    align-items: center;
+                    text-align: center;
+                  "
+                >
+                  {{ data.timeStart }}
+                </div>
+              </td>
+              <td style="width: 17%; padding: 8px 0 8px 16px">
+                <div
+                  style="
+                    width: 100%;
+                    display: flex;
+                    justify-content: start;
+                    align-items: center;
+                    text-align: center;
+                  "
+                >
+                  {{ data.timeEnd }}
+                </div>
+              </td>
+              <td style="width: 15%; padding: 8px 0 8px 16px">
+                <div
+                  style="
+                    width: 100%;
+                    display: flex;
+                    justify-content: start;
+                    align-items: center;
+                  "
+                >
+                  <div
+                    *ngIf="data.status"
+                    style="display: flex; gap: 8px; align-items: center"
+                  >
+                    <div style="display: flex; align-items: center">
+                      <img src="/assets/icon/green.png" alt="" />
+                    </div>
+                    <span
+                      style="
+                        font-size: 14px;
+                        font-weight: 400;
+                        line-height: 20px;
+                        color: #32d022;
+                      "
+                      >Đang hoạt động</span
+                    >
+                  </div>
+                  <div
+                    *ngIf="!data.status"
+                    style="display: flex; gap: 8px; align-items: center"
+                  >
+                    <div style="display: flex; align-items: center">
+                      <img src="/assets/icon/off.png" alt="" />
+                    </div>
+                    <span
+                      style="
+                        font-size: 14px;
+                        font-weight: 400;
+                        line-height: 20px;
+                        color: rgba(0, 0, 0, 0.4);
+                      "
+                      >Đang tắt</span
+                    >
+                  </div>
+                </div>
+              </td>
+              <td style="width: 13%; padding: 8px 0 8px 16px">
+                <div
+                  style="
+                    width: 100%;
+                    display: flex;
+                    justify-content: start;
+                    align-items: center;
+                    text-align: center;
+                  "
+                >
+                  {{ data.start }}
+                </div>
+              </td>
+              <td style="width: 13%; padding: 8px 0 8px 16px">
+                <div
+                  *ngIf="data.end"
+                  style="
+                    width: 100%;
+                    display: flex;
+                    justify-content: start;
+                    align-items: center;
+                    text-align: center;
+                  "
+                >
+                  {{ data.end }}
+                </div>
+                <div
+                  *ngIf="!data.end"
+                  style="
+                    width: 100%;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    text-align: center;
+                  "
+                >
+                  -
+                </div>
+              </td>
+            </tr>
+          </tbody>
+        </table> -->
+        <nz-table #basicTable [nzData]="filteredCameras" nzShowPagination="false">
+            <thead class="font-size-head">
+              <tr>
+                <th class="font-size-head">
+                    <div style="
+                        width: 100%;
+                        display: flex;
+                        justify-content: center;
+                    ">
+                        STT
+                    </div>
+                </th>
+                <th class="font-size-head">Tên camera</th>
+                <th class="font-size-head">Thời gian bắt đầu hoạt động</th>
+                <th class="font-size-head">Thời gian kết thúc hoạt động</th>
+                <th class="font-size-head">Trạng thái</th>
+                <th class="font-size-head">Thời gian bắt đầu</th>
+                <th class="font-size-head">Thời gian kết thúc</th>
+              </tr>
+            </thead>
+            <tbody class="font-size-body">
+              <tr *ngFor="
+                let data of filteredCameras
+                  | slice
+                    : (currentPage - 1) * pageSize
+                    : currentPage * pageSize;
+                let i = index
+              ">
+                <td class="font-size-body">
+                    <div
+                        style="
+                            width: 100%;
+                            display: block;
+                            align-items: center;
+                            text-align: center;
+                    ">
+                        {{ i + 1 }}
+                    </div>
+                </td>
+                <td class="font-size-body">
+                    <div
+                    style="
+                      width: 100%;
+                      display: flex;
+                      align-items: center;
+                      gap: 8px;
+                    "
+                  >
+                    <img src="/assets/icon/blue.png" alt="" />
+                    {{ data.name }}
+                  </div>
+  
+                </td>
+                <td class="font-size-body">{{ data.timeStart }}</td>
+                <td class="font-size-body">{{ data.timeEnd }}</td>
+                <td class="font-size-body">
+                    <div
+                        *ngIf="data.status"
+                        style="display: flex; gap: 8px; align-items: center"
+                    >
+                        <div style="display: flex; align-items: center">
+                        <img src="/assets/icon/green.png" alt="" />
+                        </div>
+                        <span
+                        style="
+                            font-size: 14px;
+                            font-weight: 400;
+                            line-height: 20px;
+                            color: #32d022;
+                        "
+                        >Đang hoạt động</span
+                        >
+                    </div>
+                    <div
+                        *ngIf="!data.status"
+                        style="display: flex; gap: 8px; align-items: center"
+                    >
+                        <div style="display: flex; align-items: center">
+                        <img src="/assets/icon/off.png" alt="" />
+                        </div>
+                        <span
+                        style="
+                            font-size: 14px;
+                            font-weight: 400;
+                            line-height: 20px;
+                            color: rgba(0, 0, 0, 0.4);
+                        "
+                        >Đang tắt</span
+                        >
+                    </div>
+                </td>
+                <td class="font-size-body">{{ data.start }}</td>
+                <td class="font-size-body">
+                    <div
+                        *ngIf="data.end"
+                        >
+                        {{ data.end }}
+                    </div>
+                    <div
+                        *ngIf="!data.end"
+                        style="
+                            width: 100%;
+                            display: flex;
+                            justify-content: center;
+                            align-items: center;
+                            text-align: center;
+                    ">
+                        -
+                    </div>
+                </td>
+              </tr>
+            </tbody>
+          </nz-table>
+      
+    </div>
+    </div>
+
+    <div class="list-pagination">
+      <app-pagination
+        [currentPage]="currentPage"
+        [pages]="filteredCameras.length / pageSize + 1"
+        [isFullScreen]="isFullScreen"
+        (pageClick)="handlePageClick($event)"
+        (next)="handleNext(filteredCameras.length / pageSize)"
+        (previous)="handlePrevious()"
+      ></app-pagination>
+    </div>
+  </div>
+</div>

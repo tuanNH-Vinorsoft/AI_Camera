@@ -1,0 +1,532 @@
+<div class="container-full">
+    <div class="container-text">
+        <a>Quản trị dịch vụ</a>
+    </div>
+
+    <nz-divider style="margin: 0;"></nz-divider>
+
+    <div class="container-list">
+        <div class="container-item">
+            <a [routerLink]="['/administrator/services']" class="item-link">
+                <span>Danh sách dịch vụ</span>
+            </a>
+        </div>
+        <div class="container-item">
+            <a [routerLink]="['/administrator/wait-for-confirmation']" class="item-link">
+                <span>Chờ xác nhận (0)</span>
+            </a>
+        </div>
+        <div class="container-item">
+            <a [routerLink]="['/administrator/registered-service']" class="item-link">
+                <span>Dịch vụ đăng ký (0)</span>
+            </a>
+        </div>
+    </div>
+
+    <nz-divider style="margin: 0;"></nz-divider>
+
+    <div class="service-list">
+        <div class="service-sreach">
+            <div class="sreach-text">Tìm kiếm theo tên dịch vụ</div>
+            <div class="sreach-input">
+                <div class="input-button">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <g clip-path="url(#clip0_1_3127)">
+                        <path d="M10 17C13.866 17 17 13.866 17 10C17 6.13401 13.866 3 10 3C6.13401 3 3 6.13401 3 10C3 13.866 6.13401 17 10 17Z" stroke="black" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path d="M21 21L15 15" stroke="black" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                        </g>
+                        <defs>
+                        <clipPath id="clip0_1_3127">
+                        <rect width="24" height="24" fill="white"/>
+                        </clipPath>
+                        </defs>
+                    </svg>
+                </div>
+                <input type="text" placeholder="Nhập từ khoá" (input)="onNameChange($event)" >
+            </div>
+        </div>
+
+        <div class="service-table scoll-bar">
+            <div style="overflow: auto; width: 100%;" class="scoll-bar-ver">
+                <nz-table [nzData]="filteredServices" nzShowPagination="false">
+                    <thead style=" background-color: #F8F8F8;" class="font-size-head">
+                        <tr >
+                            <th style="width: 5%; padding: 14px 0 14px 16px; font-weight: 600;" >STT</th>
+                            <th style="width: 20%; padding: 14px 0 14px 16px; font-weight: 600;" >
+                                <div style="
+                                    width: 100%;
+                                    display: flex;
+                                    justify-content: start;
+                                    align-items: center;
+                                    text-align: center;   
+                                ">
+                                    Tên dịch vụ
+                                </div>
+                            </th>
+                            <th style="width: 10%; padding: 14px 0 14px 16px; font-weight: 600;" >
+                                <div style="
+                                    width: 100%;
+                                    display: flex;
+                                    justify-content: start;
+                                    align-items: center;
+                                ">
+                                    Chất lượng ảnh
+                                </div>
+                            </th>
+                            <th style="width: 13%; padding: 14px 0 14px 16px; font-weight: 600;" >
+                                <div style="
+                                    width: 100%;
+                                    display: flex;
+                                    justify-content: start;
+                                    align-items: center;
+                                ">
+                                    Thời gian lưu trữ
+                                </div>
+                            </th>
+                            <th style="width: 13%; padding: 14px 0 14px 16px; font-weight: 600;" >
+                                <div style="
+                                    width: 100%;
+                                    display: flex;
+                                    justify-content: start;
+                                    align-items: center;
+                                ">
+                                    Thời gian bắt đầu
+                                </div>
+                            </th>
+                            <th style="width: 10%; padding: 14px 0 14px 16px; font-weight: 600;" >
+                                <div style="
+                                    width: 100%;
+                                    display: flex;
+                                    justify-content: start;
+                                    align-items: center;
+                                ">
+                                    Trạng thái gia hạn
+                                </div>
+                            </th>
+                            <th style="width: 10%; padding: 14px 0 14px 16px; font-weight: 600;" >
+                                <div style="
+                                    display: flex; 
+                                    align-items: center;
+                                    justify-content: center;
+                                ">
+                                    <a class="button-click" (click)="setShow()">Số lượng camera</a>
+                                    <div style="display: flex; align-items: center;">
+                                        <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M8.55758 5.25856L4.1201 2.22068C3.91517 2.08028 3.70869 2.00598 3.53706 2.00598C3.20525 2.00598 3 2.27228 3 2.71803V9.28378C3 9.72902 3.205 9.9948 3.53603 9.9948C3.70791 9.9948 3.9111 9.92043 4.11648 9.77965L8.55603 6.74184C8.84154 6.54615 8.99965 6.28283 8.99965 6.00004C8.99971 5.71744 8.84341 5.45418 8.55758 5.25856Z" fill="black"/>
+                                        </svg>                                            
+                                    </div>
+                                </div>
+                            </th>
+                            <th style="width: 15%; padding: 14px 0 14px 16px; font-weight: 600;" >
+                                <div style="
+                                    width: 100%;
+                                    display: flex;
+                                    justify-content: start;
+                                    align-items: center;
+                                    text-align: center;   
+                                ">
+                                    Trạng thái
+                                </div>
+                            </th>
+                            <th style="width: 5%; padding: 14px; font-weight: 600;" >Action</th>
+                        </tr>
+                    </thead>
+                    <tbody class="font-size-body">
+                        <tr *ngFor="let data of filteredServices | slice: (currentService-1) * pageSize : (currentService) * pageSize, let i=index">
+                            <td class="font-size-body" >
+                                <div style="
+                                    width: 100%;
+                                    display: block;
+                                    align-items: center;
+                                    text-align: center;   
+                                ">
+                                    {{i+1}}
+                                </div>
+                            </td>
+                            <td class="font-size-body" >
+                                <div style="
+                                    gap: 8px;
+                                    width: 100%;
+                                    display: flex;
+                                    justify-content: start;
+                                ">
+                                    <div style="display: flex; align-items: center;">
+                                        <img src="/assets/icon/blue.png" alt="">
+                                    </div>
+                                    {{data.name}}
+                                </div>
+                            </td>
+                            <td class="font-size-body" >
+                                <div style="
+                                    width: 100%;
+                                    display: flex;
+                                    justify-content: start;
+                                    align-items: center;
+                                    text-align: center;   
+                                ">
+                                    {{data.img}}
+                                </div>
+                            </td>
+                            <td class="font-size-body" >
+                                <div style="
+                                    width: 100%;
+                                    display: flex;
+                                    justify-content: start;
+                                    align-items: center;
+                                    text-align: center;   
+                                ">
+                                    {{data.timeSave}}
+                                </div>
+                            </td>
+                            <td class="font-size-body" >
+                                <div style="
+                                    width: 100%;
+                                    display: flex;
+                                    justify-content: start;
+                                    align-items: center;
+                                    text-align: center;   
+                                ">
+                                    {{data.timeStart}}
+                                </div>
+                            </td>
+                            <td class="font-size-body" >
+                                <div style="
+                                    width: 100%;
+                                    display: flex;
+                                    justify-content: start;
+                                    align-items: center;
+                                ">
+                                    <div *ngIf="data.extensionStatus" style="display: flex; gap: 8px; align-items: center;">
+                                        <div style="display: flex; align-items: center;">
+                                            <img src="/assets/icon/on.png" alt="">
+                                        </div>
+                                        <span style="font-size: 14px; font-weight: 400; line-height: 20px; color: #32D022;">Gia hạn</span>
+                                    </div>
+                                    <div *ngIf="!data.extensionStatus"  style="display: flex; gap: 8px; align-items: center;">
+                                        <div style="display: flex; align-items: center;">
+                                            <img src="/assets/icon/off.png" alt="">
+                                        </div>
+                                        <span style="font-size: 14px; font-weight: 400; line-height: 20px; color: rgba(0, 0, 0, 0.4);">Không</span>
+                                    </div>
+                                </div>
+                            </td>
+                            <td class="font-size-body" >
+                                <div style="
+                                    width: 100%;
+                                    display: flex;
+                                    justify-content: center;
+                                    align-items: center;
+                                    text-align: center;   
+                                ">
+                                    {{data.quantity}}
+                                </div>
+                            </td>
+                            <td class="font-size-body" >
+                                <div style="
+                                    width: 100%;
+                                    display: flex;
+                                    justify-content: start;
+                                    align-items: center;
+                                ">
+                                    <div *ngIf="!data.staus" style="display: flex;align-items: center; gap: 8px;">
+                                        <div style="display: flex; align-items: center;">
+                                            <img src="/assets/icon/red.png" alt="">
+                                        </div>
+                                        <span style="font-size: 14px; font-weight: 400; line-height: 20px; color: #F25B60;">Hết hạn</span>
+                                    </div>
+                                    <div *ngIf="data.staus" style="display: flex; align-items: center; gap: 8px;">
+                                        <div style="display: flex; align-items: center;">
+                                            <img src="/assets/icon/green.png" alt="">
+                                        </div>
+                                        <span style="font-size: 14px; font-weight: 400; line-height: 20px; color: #32D022;">Đang sử dụng</span>
+                                    </div>
+                                </div>
+                            </td>
+                            <td class="font-size-body" >
+                                <div style="
+                                    width: 100%;
+                                    display: block;
+                                    align-items: center;
+                                    text-align: center;   
+                                ">
+                                    <a>
+                                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <g clip-path="url(#clip0_3279_29610)"><path d="M4 7H20" stroke="#FF3300" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path><path d="M10 11V17" stroke="#FF3300" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path><path d="M14 11V17" stroke="#FF3300" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path><path d="M5 7L6 19C6 19.5304 6.21071 20.0391 6.58579 20.4142C6.96086 20.7893 7.46957 21 8 21H16C16.5304 21 17.0391 20.7893 17.4142 20.4142C17.7893 20.0391 18 19.5304 18 19L19 7" stroke="#FF3300" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path><path d="M9 7V4C9 3.73478 9.10536 3.48043 9.29289 3.29289C9.48043 3.10536 9.73478 3 10 3H14C14.2652 3 14.5196 3.10536 14.7071 3.29289C14.8946 3.48043 15 3.73478 15 4V7" stroke="#FF3300" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path></g><defs><clipPath id="clip0_3279_29610"><rect width="24" height="24" fill="white"></rect></clipPath></defs>
+                                        </svg>
+                                    </a>
+                                </div>
+                            </td>
+                        </tr>
+                    </tbody>
+                </nz-table>
+            </div>
+        </div>
+        
+        <div class="list-pagination">
+            <app-pagination
+            [currentPage]="currentService"
+            [pages]="filteredServices.length/pageSize+1"
+            [isFullScreen]="isFullScreen"
+            (pageClick)="handlePageClick($event)"
+            (next)="handleNext(filteredServices.length/pageSize)"
+            (previous)="handlePrevious()"
+        ></app-pagination>
+        </div>
+    </div>
+
+    <div *ngIf="showScreen" class="screen-camera">
+        <div class="table-camera">
+            <div class="table-camera-header">
+                <span class="header-text">Số lượng camera</span>
+                <a (click)="setShow()">
+                    <span class="header-button-close" nz-icon nzType="close" nzTheme="outline"></span>
+                </a>
+            </div>
+            <div class="table-camera-body">
+                <div class="table-camera-sreach" >
+                    <span>Tìm kiếm theo tên camera</span>
+                    <div class="sreach-input">
+                        <div class="input-button">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <g clip-path="url(#clip0_1_4264)">
+                                <path d="M10 17C13.866 17 17 13.866 17 10C17 6.13401 13.866 3 10 3C6.13401 3 3 6.13401 3 10C3 13.866 6.13401 17 10 17Z" stroke="black" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                <path d="M21 21L15 15" stroke="black" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                </g>
+                                <defs>
+                                <clipPath id="clip0_1_4264">
+                                <rect width="24" height="24" fill="white"/>
+                                </clipPath>
+                                </defs>
+                            </svg>    
+                        </div>
+                        <input type="text" nz-input placeholder="Tìm kiếm theo tên camera" (input)="onCameraChange($event)" />
+                    </div>
+                </div>
+
+                <div class="table-list-camera scoll-bar">
+                    <div style="overflow: auto; width: 100%;" class="scoll-bar-ver">
+                        <nz-table [nzData]="filteredCameras" nzShowPagination="false">
+                            <thead style="width: 100%; background-color: #F8F8F8;" class="font-size-head">
+                                <tr>
+                                    <th style="width: 5%; padding: 10px; font-weight: 600;" >
+                                        <div style="
+                                        width: 100%;
+                                        display: flex;
+                                        justify-content: start;
+                                        align-items: center;
+                                        text-align: center;   
+                                        ">
+                                            STT
+                                        </div>
+                                    </th>
+                                    <th style="width: 20%; padding: 10px; font-weight: 600;" >
+                                        <div style="
+                                        width: 100%;
+                                        display: flex;
+                                        justify-content: start;
+                                        align-items: center;
+                                        text-align: center;   
+                                        ">
+                                            Tên camera
+                                        </div>
+                                    </th>
+                                    <th style="width: 15%; padding: 10px; font-weight: 600;" >
+                                        <div style="
+                                        width: 100%;
+                                        display: flex;
+                                        justify-content: start;
+                                        align-items: center;
+                                        text-align: center;   
+                                        ">
+                                            Thời gian bắt đầu hoạt động
+                                        </div>
+                                    </th>
+                                    <th style="width: 15%; padding: 10px; font-weight: 600;" >
+                                        <div style="
+                                        width: 100%;
+                                        display: flex;
+                                        justify-content: start;
+                                        align-items: center;
+                                        text-align: center;   
+                                        ">
+                                            Thời gian kết thúc hoạt động
+                                        </div>
+                                    </th>
+                                    <th style="width: 7%; padding: 10px; font-weight: 600;" >Trạng thái</th>
+                                    <th style="width: 11%; padding: 10px; font-weight: 600;" >
+                                        <div style="
+                                        width: 100%;
+                                        display: flex;
+                                        justify-content: start;
+                                        align-items: center;
+                                        text-align: center;   
+                                        ">
+                                            Thời gian bắt đầu
+                                        </div>
+                                    </th>
+                                    <th style="width: 11%; padding: 10px; font-weight: 600;" >
+                                        <div style="
+                                        width: 100%;
+                                        display: flex;
+                                        justify-content: start;
+                                        align-items: center;
+                                        text-align: center;   
+                                        ">
+                                            Thời gian kết thúc
+                                        </div>
+                                    </th>
+                                    <th style="width: 11%; padding: 10px; font-weight: 600;" >
+                                        <div style="
+                                        display: flex; 
+                                        align-items: center;
+                                        justify-content: center;
+                                    ">
+                                        <a class="button-click" (click)="setShow()" style="font-weight: 600;">Số lượng camera</a>
+                                        <div style="display: flex; align-items: center;">
+                                            <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <path d="M8.55758 5.25856L4.1201 2.22068C3.91517 2.08028 3.70869 2.00598 3.53706 2.00598C3.20525 2.00598 3 2.27228 3 2.71803V9.28378C3 9.72902 3.205 9.9948 3.53603 9.9948C3.70791 9.9948 3.9111 9.92043 4.11648 9.77965L8.55603 6.74184C8.84154 6.54615 8.99965 6.28283 8.99965 6.00004C8.99971 5.71744 8.84341 5.45418 8.55758 5.25856Z" fill="black"/>
+                                            </svg>                                            
+                                        </div>
+                                    </div>
+                                    </th>
+                                    <th style="width: 5%; padding: 10px; font-weight: 600;" >Action</th>
+                                </tr>
+                            </thead>
+                            <tbody class="font-size-body">
+                                <tr 
+                                    *ngFor="let dataCamera of filteredCameras | slice: (currentCamera-1) * pageSize : (currentCamera) * pageSize, let i = index"
+                                >
+                                    <td style="width: 5%; padding: 10px;" >
+                                        <div style="
+                                        width: 100%;
+                                        display: block;
+                                        align-items: center;
+                                        text-align: center;   
+                                        ">
+                                            {{ i + 1 }}
+                                        </div>
+                                    </td>
+                                    <td style="width: 20%; padding: 10px;" >
+                                        <div style="
+                                        gap: 8px;
+                                        width: 100%;
+                                        display: flex;
+                                        justify-content: start;
+                                    ">
+                                        <div style="display: flex; align-items: center;">
+                                            <img src="/assets/icon/blue.png" alt="">
+                                        </div>
+                                        {{ dataCamera.name }}
+                                    </div>
+                                    </td>
+                                    <td style="width: 15%; padding: 10px;" >
+                                        <div style="
+                                        width: 100%;
+                                        display: flex;
+                                        justify-content: start;
+                                        align-items: center;
+                                        text-align: center;   
+                                        ">
+                                            {{ dataCamera.timeStart }}
+                                        </div>
+                                    </td>
+                                    <td style="width: 15%; padding: 10px;" >
+                                        <div style="
+                                        width: 100%;
+                                        display: flex;
+                                        justify-content: start;
+                                        align-items: center;
+                                        text-align: center;   
+                                        ">
+                                            {{ dataCamera.timeEnd }}
+                                        </div>
+                                    </td>
+                                    <td style="width: 7%; padding: 10px;" >
+                                        <div style="
+                                            gap: 12px;
+                                            display: flex;
+                                            justify-content: center;
+                                            align-items: center;
+                                        ">
+                                            <nz-switch [(ngModel)]="dataCamera.status"></nz-switch>
+                                        </div>
+                                    </td>
+                                    <td style="width: 11%; padding: 10px;" >
+                                        <div style="
+                                        width: 100%;
+                                        display: flex;
+                                        justify-content: start;
+                                        align-items: center;
+                                        text-align: center;   
+                                        ">
+                                            {{ dataCamera.start }}
+                                        </div>
+                                    </td>
+                                    <td style="width: 11%; padding: 10px;" >
+                                        <div style="
+                                        width: 100%;
+                                        display: flex;
+                                        justify-content: start;
+                                        align-items: center;
+                                        text-align: center;   
+                                        "  *ngIf="dataCamera.end">
+                                            {{ dataCamera.end }}
+                                        </div>
+                                        <div style="
+                                        width: 100%;
+                                        display: flex;
+                                        justify-content: center;
+                                        align-items: center;
+                                        text-align: center;   
+                                        " *ngIf="!dataCamera.end">
+                                            -
+                                        </div>
+                                    </td>
+                                    <td style="width: 11%; padding: 10px;" >
+                                        <div style="
+                                        width: 100%;
+                                        display: block;
+                                        align-items: center;
+                                        text-align: center;   
+                                        ">
+                                            {{ dataCamera.quantity }}
+                                        </div>
+                                    </td>
+                                    <td style="width: 5%; padding: 10px;" >
+                                        <div style="
+                                        width: 100%;
+                                        display: block;
+                                        align-items: center;
+                                        text-align: center;   
+                                        ">
+                                            <a>
+                                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                    <g clip-path="url(#clip0_3279_29610)"><path d="M4 7H20" stroke="#FF3300" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path><path d="M10 11V17" stroke="#FF3300" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path><path d="M14 11V17" stroke="#FF3300" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path><path d="M5 7L6 19C6 19.5304 6.21071 20.0391 6.58579 20.4142C6.96086 20.7893 7.46957 21 8 21H16C16.5304 21 17.0391 20.7893 17.4142 20.4142C17.7893 20.0391 18 19.5304 18 19L19 7" stroke="#FF3300" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path><path d="M9 7V4C9 3.73478 9.10536 3.48043 9.29289 3.29289C9.48043 3.10536 9.73478 3 10 3H14C14.2652 3 14.5196 3.10536 14.7071 3.29289C14.8946 3.48043 15 3.73478 15 4V7" stroke="#FF3300" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path></g><defs><clipPath id="clip0_3279_29610"><rect width="24" height="24" fill="white"></rect></clipPath></defs>
+                                                </svg>
+                                            </a>
+                                        </div>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </nz-table>
+                    </div>
+                </div>
+
+                <div class="list-pagination">
+                    <app-pagination
+                        [currentPage]="currentCamera"
+                        [pages]="filteredCameras.length/pageSize + 1"
+                        [isFullScreen]="isFullScreen"
+                        (pageClick)="handlePageClickCamera($event)"
+                        (next)="handleNextCamera(filteredCameras.length/pageSize)"
+                        (previous)="handlePreviousCamera()"
+                    ></app-pagination>
+                </div>
+            </div>
+            <div class="action-buttons">
+                <button class="button-delete" >Xóa</button>
+                <button class="button-success" (click)="setShow()" >Phê duyệt</button>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,176 @@
+<app-app-frame></app-app-frame>
+
+<div class="container-full">
+  <div class="sider-bar">
+    <aside 
+      nzWidth="256px"
+      nzBreakpoint="md"
+      [ngStyle]="{ 'width': isCollapsed ? '52px' : '280px'}"
+    >
+      <div class="scroll-bar">
+        <ul nz-menu nzMode="inline" class="sider-bar-list" [nzInlineCollapsed]="isCollapsed">
+          <!-- Trang chủ -->
+          <li class="sider-bar-item">
+            <a href="/" style="color: rgba(0, 0, 0, 0.6);">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <mask id="mask0_6059_17538" maskUnits="userSpaceOnUse" x="0" y="0" width="24" height="24" style="mask-type: alpha;"><rect width="24" height="24" fill="#D9D9D9"></rect></mask><g mask="url(#mask0_6059_17538)"><path d="M4.5 18.4996V7.24967L12 1.60547L19.5 7.24967V11.4131H18V7.99964L12 3.48042L5.99997 7.99964V16.9996H12.4135V18.4996H4.5ZM18.5 21.3938L17.2923 18.7073L14.6058 17.4996L17.2923 16.292L18.5 13.6055L19.7077 16.292L22.3941 17.4996L19.7077 18.7073L18.5 21.3938Z" fill="black" fill-opacity="0.4"></path></g>
+              </svg>
+              <span class="sider-bar-text" [ngStyle]="{'display': isCollapsed ? 'none':'block'}">
+                Trang chủ
+              </span>
+            </a>
+          </li>
+
+          <!-- Thống kê -->
+          <li class="sider-bar-item">
+            <a  style="color: rgba(0, 0, 0, 0.6);">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <mask id="mask0_6028_17543" maskUnits="userSpaceOnUse" x="0" y="0" width="24" height="24" style="mask-type: alpha;"><rect width="24" height="24" fill="#D9D9D9"></rect></mask><g mask="url(#mask0_6028_17543)"><path d="M8.40394 8.39382L7.49434 6.40924L5.50974 5.49964L7.49434 4.59005L8.40394 2.60547L9.31354 4.59005L11.2981 5.49964L9.31354 6.40924L8.40394 8.39382ZM14.9039 11.3938L14.1458 9.75779L12.5097 8.99965L14.1458 8.2415L14.9039 6.60547L15.6621 8.2415L17.2981 8.99965L15.6621 9.75779L14.9039 11.3938ZM3.90394 13.3938L3.14577 11.7578L1.50977 10.9996L3.14577 10.2415L3.90394 8.60547L4.66209 10.2415L6.29812 10.9996L4.66209 11.7578L3.90394 13.3938ZM4.36547 20.1535L3.25012 19.0381L10.4039 11.8843L14.4039 15.8843L21.4462 7.89967L22.5001 8.93427L14.4232 18.1342L10.4039 14.115L4.36547 20.1535Z" fill="black" fill-opacity="0.4"></path></g>
+              </svg>
+              <span class="sider-bar-text" [ngStyle]="{'display': isCollapsed ? 'none':'block'}">
+                Thống kê
+              </span>
+            </a>
+          </li>
+
+          <!-- Xem trực tiếp -->
+          <li class="sider-bar-item">
+            <a style="color: rgba(0, 0, 0, 0.6);">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <mask id="mask0" maskUnits="userSpaceOnUse" x="0" y="0" width="24" height="24" style="mask-type: alpha;"><rect width="24" height="24" fill="#D9D9D9"></rect></mask><g mask="url(#mask0)"><path d="M4.54791 19.5C4.04278 19.5 3.61521 19.325 3.26521 18.975C2.91523 18.625 2.74023 18.1974 2.74023 17.6923V6.3077C2.74023 5.80257 2.91523 5.375 3.26521 5.025C3.61521 4.675 4.04278 4.5 4.54791 4.5H15.9325C16.4376 4.5 16.8652 4.675 17.2152 5.025C17.5652 5.375 17.7402 5.80257 17.7402 6.3077V10.8846L21.2593 7.36543V16.6345L17.7402 13.1153V17.6923C17.7402 18.1974 17.5652 18.625 17.2152 18.975C16.8652 19.325 16.4376 19.5 15.9325 19.5H4.54791ZM4.54791 18H15.9325C16.0222 18 16.096 17.9711 16.1536 17.9134C16.2113 17.8557 16.2402 17.782 16.2402 17.6923V6.3077C16.2402 6.21795 16.2113 6.14423 16.1536 6.08652C16.096 6.02882 16.0222 5.99998 15.9325 5.99998H4.54791C4.45816 5.99998 4.38443 6.02882 4.32673 6.08652C4.26903 6.14423 4.24018 6.21795 4.24018 6.3077V17.6923C4.24018 17.782 4.26903 17.8557 4.32673 17.9134C4.38443 17.9711 4.45816 18 4.54791 18ZM10.2402 15.5192L11.3363 13.0961L13.7594 12L11.3363 10.9038L10.2402 8.48078L9.14403 10.9038L6.72098 12L9.14403 13.0961L10.2402 15.5192Z" fill="black" fill-opacity="0.4"></path></g>
+              </svg>
+              <span class="sider-bar-text" [ngStyle]="{'display': isCollapsed ? 'none':'block'}">
+                Xem trực tiếp
+              </span>
+            </a>
+          </li>
+
+          <!-- Bản đồ Camera -->
+          <li class="sider-bar-item">
+            <a style="color: rgba(0, 0, 0, 0.6);">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <mask id="mask0_6028_17553" maskUnits="userSpaceOnUse" x="0" y="0" width="24" height="24" style="mask-type: alpha;"><rect width="24" height="24" fill="#D9D9D9"></rect></mask><g mask="url(#mask0_6028_17553)"><path d="M8.25385 16.5961L12 14.8961L15.7461 16.5961L16.0057 16.3365L12 6.65388L7.99423 16.3365L8.25385 16.5961ZM12.0016 21.5C10.6877 21.5 9.45268 21.2506 8.29655 20.752C7.1404 20.2533 6.13472 19.5765 5.2795 18.7217C4.42427 17.8669 3.74721 16.8616 3.24833 15.706C2.74944 14.5504 2.5 13.3156 2.5 12.0017C2.5 10.6877 2.74933 9.45268 3.248 8.29655C3.74667 7.1404 4.42342 6.13472 5.27825 5.2795C6.1331 4.42427 7.13834 3.74721 8.29398 3.24833C9.44959 2.74944 10.6844 2.5 11.9983 2.5C13.3122 2.5 14.5473 2.74933 15.7034 3.248C16.8596 3.74667 17.8652 4.42342 18.7205 5.27825C19.5757 6.1331 20.2527 7.13834 20.7516 8.29398C21.2505 9.44959 21.5 10.6844 21.5 11.9983C21.5 13.3122 21.2506 14.5473 20.752 15.7034C20.2533 16.8596 19.5765 17.8652 18.7217 18.7205C17.8669 19.5757 16.8616 20.2527 15.706 20.7516C14.5504 21.2505 13.3156 21.5 12.0016 21.5ZM12 20C14.2333 20 16.125 19.225 17.675 17.675C19.225 16.125 20 14.2333 20 12C20 9.76664 19.225 7.87498 17.675 6.32498C16.125 4.77498 14.2333 3.99998 12 3.99998C9.76664 3.99998 7.87498 4.77498 6.32498 6.32498C4.77498 7.87498 3.99998 9.76664 3.99998 12C3.99998 14.2333 4.77498 16.125 6.32498 17.675C7.87498 19.225 9.76664 20 12 20Z" fill="black" fill-opacity="0.4"></path></g>
+              </svg>
+              <span class="sider-bar-text" [ngStyle]="{'display': isCollapsed ? 'none':'block'}">
+                Bản đồ
+              </span>
+            </a>
+          </li>
+            
+          <!-- Xem lại -->
+          <li class="sider-bar-item">
+            <a style="color: rgba(0, 0, 0, 0.6);">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <mask id="mask0_6028_17558" maskUnits="userSpaceOnUse" x="0" y="0" width="24" height="24" style="mask-type: alpha;"><rect width="24" height="24" fill="#D9D9D9"></rect></mask><g mask="url(#mask0_6028_17558)"><path d="M3.29883 17.3077V6.69238L11.2603 12L3.29883 17.3077ZM12.7411 17.3077V6.69238L20.7026 12L12.7411 17.3077ZM4.7988 14.5001L8.5642 12L4.7988 9.50001V14.5001ZM14.2411 14.5001L18.0065 12L14.2411 9.50001V14.5001Z" fill="black" fill-opacity="0.4"></path></g>
+              </svg>
+              <span class="sider-bar-text" [ngStyle]="{'display': isCollapsed ? 'none':'block'}">
+                Xem lại
+              </span>
+            </a>
+          </li>
+
+          <!-- Cảnh báo thông minh -->
+          <li class="sider-bar-item">
+            <a style="color: rgba(0, 0, 0, 0.6);">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <mask id="mask0_6028_17563" maskUnits="userSpaceOnUse" x="0" y="0" width="24" height="24" style="mask-type: alpha;"><rect width="24" height="24" fill="#D9D9D9"></rect></mask><g mask="url(#mask0_6028_17563)"><path d="M4.42291 20.5C3.91779 20.5 3.49023 20.325 3.14023 19.975C2.79023 19.625 2.61523 19.1974 2.61523 18.6923V5.3077C2.61523 4.80257 2.79023 4.375 3.14023 4.025C3.49023 3.675 3.91779 3.5 4.42291 3.5H17.8075C18.3126 3.5 18.7402 3.675 19.0902 4.025C19.4402 4.375 19.6152 4.80257 19.6152 5.3077V7.38463H21.3844V8.88458H19.6152V11.25H21.3844V12.75H19.6152V15.1154H21.3844V16.6153H19.6152V18.6923C19.6152 19.1974 19.4402 19.625 19.0902 19.975C18.7402 20.325 18.3126 20.5 17.8075 20.5H4.42291ZM4.42291 19H17.8075C17.8844 19 17.9549 18.9679 18.019 18.9038C18.0832 18.8397 18.1152 18.7692 18.1152 18.6923V5.3077C18.1152 5.23077 18.0832 5.16024 18.019 5.09613C17.9549 5.03203 17.8844 4.99998 17.8075 4.99998H4.42291C4.34599 4.99998 4.27548 5.03203 4.21136 5.09613C4.14726 5.16024 4.11521 5.23077 4.11521 5.3077V18.6923C4.11521 18.7692 4.14726 18.8397 4.21136 18.9038C4.27548 18.9679 4.34599 19 4.42291 19ZM6.49983 16.6153H11.019V13.0961H6.49983V16.6153ZM12.2114 9.90383H15.7306V7.38463H12.2114V9.90383ZM6.49983 11.9038H11.019V7.38463H6.49983V11.9038ZM12.2114 16.6153H15.7306V11.0961H12.2114V16.6153Z" fill="black" fill-opacity="0.4"></path></g>
+              </svg>
+              <span class="sider-bar-text" [ngStyle]="{'display': isCollapsed ? 'none':'block'}">
+                Cảnh báo thông minh
+              </span>
+            </a>
+          </li>
+
+          <!-- Lịch sử -->
+          <li class="sider-bar-item">
+            <a style="color: rgba(0, 0, 0, 0.6);">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <mask id="mask0_6043_17568" maskUnits="userSpaceOnUse" x="0" y="0" width="24" height="24" style="mask-type: alpha;"><rect width="24" height="24" fill="#D9D9D9"></rect></mask><g mask="url(#mask0_6043_17568)"><path d="M12 21.5C10.6858 21.5 9.45082 21.2506 8.295 20.752C7.13917 20.2533 6.13375 19.5765 5.27875 18.7217C4.42375 17.8669 3.74688 16.8616 3.24812 15.706C2.74937 14.5504 2.5 13.3156 2.5 12.0017C2.5 10.6877 2.74933 9.45268 3.248 8.29655C3.74667 7.1404 4.42342 6.13472 5.27825 5.2795C6.1331 4.42427 7.13834 3.74721 8.29398 3.24833C9.44959 2.74944 10.6844 2.5 11.9983 2.5C13.3122 2.5 14.5473 2.74938 15.7034 3.24813C16.8596 3.74688 17.8652 4.42375 18.7205 5.27875C19.5757 6.13375 20.2527 7.13917 20.7516 8.295C21.2505 9.45082 21.5 10.6858 21.5 12C21.5 12.45 21.4717 12.8916 21.4153 13.325C21.3589 13.7583 21.2692 14.1833 21.1461 14.6C20.9641 14.4102 20.7589 14.2478 20.5307 14.1125C20.3025 13.9772 20.0532 13.8827 19.7827 13.8289C19.8583 13.534 19.9134 13.2349 19.9481 12.9317C19.9827 12.6285 20 12.3179 20 12C20 9.76664 19.225 7.87498 17.675 6.32498C16.125 4.77498 14.2333 3.99998 12 3.99998C9.76664 3.99998 7.87498 4.77498 6.32498 6.32498C4.77498 7.87498 3.99998 9.76664 3.99998 12C3.99998 14.2333 4.77498 16.125 6.32498 17.675C7.87498 19.225 9.76664 20 12 20C12.8756 20 13.7089 19.8682 14.4997 19.6047C15.2905 19.3412 16.0175 18.9723 16.6808 18.4981C16.8359 18.7045 17.0176 18.8903 17.2259 19.0557C17.4343 19.2211 17.6602 19.3525 17.9038 19.45C17.0923 20.0948 16.188 20.5977 15.1911 20.9586C14.1941 21.3195 13.1304 21.5 12 21.5ZM19.1063 17.75C18.8264 17.75 18.5897 17.6533 18.3961 17.4601C18.2025 17.2669 18.1058 17.0304 18.1058 16.7505C18.1058 16.4707 18.2024 16.234 18.3956 16.0404C18.5888 15.8468 18.8254 15.75 19.1052 15.75C19.385 15.75 19.6217 15.8466 19.8153 16.0398C20.0089 16.2331 20.1057 16.4696 20.1057 16.7494C20.1057 17.0293 20.0091 17.266 19.8159 17.4596C19.6227 17.6532 19.3861 17.75 19.1063 17.75ZM15.4731 16.5269L11.25 12.3036V6.99998H12.75V11.6961L16.5269 15.4731L15.4731 16.5269Z" fill="black" fill-opacity="0.4"></path></g>
+              </svg>
+              <span class="sider-bar-text" [ngStyle]="{'display': isCollapsed ? 'none':'block'}">
+                Lịch sử
+              </span>
+            </a>
+          </li>
+
+          <!-- Nhận diện khuôn mặt -->
+          <li class="sider-bar-item">
+            <a style="color: rgba(0, 0, 0, 0.6);">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <g clip-path="url(#clip0_4907_18787)"><path d="M4 8V6C4 5.46957 4.21071 4.96086 4.58579 4.58579C4.96086 4.21071 5.46957 4 6 4H8" stroke="#000000" opacity="0.5" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path><path d="M4 16V18C4 18.5304 4.21071 19.0391 4.58579 19.4142C4.96086 19.7893 5.46957 20 6 20H8" stroke="#000000" opacity="0.5" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path><path d="M16 4H18C18.5304 4 19.0391 4.21071 19.4142 4.58579C19.7893 4.96086 20 5.46957 20 6V8" stroke="#000000" opacity="0.5" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path><path d="M16 20H18C18.5304 20 19.0391 19.7893 19.4142 19.4142C19.7893 19.0391 20 18.5304 20 18V16" stroke="#000000" opacity="0.5" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path><path d="M9 10H9.01" stroke="#000000" opacity="0.5" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path><path d="M15 10H15.01" stroke="#000000" opacity="0.5" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path><path d="M9.5 15C9.82588 15.3326 10.2148 15.5968 10.6441 15.7772C11.0734 15.9576 11.5344 16.0505 12 16.0505C12.4656 16.0505 12.9266 15.9576 13.3559 15.7772C13.7852 15.5968 14.1741 15.3326 14.5 15" stroke="#000000" opacity="0.5" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path></g><defs><clipPath id="clip0_4907_18787"><rect width="24" height="24" fill="white"></rect></clipPath></defs>
+              </svg>
+              <span class="sider-bar-text" [ngStyle]="{'display': isCollapsed ? 'none':'block'}">
+                Nhận diện khuôn mặt
+              </span>
+            </a>
+          </li>
+
+          <!-- Quản trị -->
+          <li nz-submenu class="sider-bar-button-list" [nzPaddingLeft]="10" [nzPlacement]="'bottomRight'">
+            <a class="button-list" title [ngStyle]="{'padding-left': isCollapsed ? '4px' : ''}">
+              <span nz-icon class="" style="display: grid; justify-content: center; align-items: center;">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <mask id="mask0_6043_17573" maskUnits="userSpaceOnUse" x="0" y="0" width="24" height="24" style="mask-type: alpha;"><rect width="24" height="24" fill="#D9D9D9"></rect></mask><g mask="url(#mask0_6043_17573)"><path d="M4.99997 18.0423C5.89998 17.159 6.94581 16.4631 8.13748 15.9548C9.32914 15.4465 10.6166 15.1923 12 15.1923C13.3833 15.1923 14.6708 15.4465 15.8625 15.9548C17.0541 16.4631 18.1 17.159 19 18.0423V5.3077C19 5.23077 18.9679 5.16024 18.9038 5.09613C18.8397 5.03203 18.7692 4.99998 18.6923 4.99998H5.3077C5.23077 4.99998 5.16024 5.03203 5.09612 5.09613C5.03202 5.16024 4.99997 5.23077 4.99997 5.3077V18.0423ZM12 13.0385C12.9025 13.0385 13.6698 12.7224 14.3019 12.0904C14.9339 11.4583 15.25 10.691 15.25 9.78845C15.25 8.8859 14.9339 8.1186 14.3019 7.48655C13.6698 6.8545 12.9025 6.53848 12 6.53848C11.0974 6.53848 10.3301 6.8545 9.69808 7.48655C9.06603 8.1186 8.75 8.8859 8.75 9.78845C8.75 10.691 9.06603 11.4583 9.69808 12.0904C10.3301 12.7224 11.0974 13.0385 12 13.0385ZM5.3077 20.5C4.80257 20.5 4.375 20.325 4.025 19.975C3.675 19.625 3.5 19.1974 3.5 18.6923V5.3077C3.5 4.80257 3.675 4.375 4.025 4.025C4.375 3.675 4.80257 3.5 5.3077 3.5H18.6923C19.1974 3.5 19.625 3.675 19.975 4.025C20.325 4.375 20.5 4.80257 20.5 5.3077V18.6923C20.5 19.1974 20.325 19.625 19.975 19.975C19.625 20.325 19.1974 20.5 18.6923 20.5H5.3077ZM6.44225 19H17.5577V18.7885C16.768 18.0833 15.9016 17.5577 14.9587 17.2115C14.0157 16.8653 13.0295 16.6923 12 16.6923C10.9833 16.6923 10.0019 16.8637 9.05573 17.2067C8.10956 17.5497 7.2384 18.0705 6.44225 18.7692V19ZM12 11.5385C11.5192 11.5385 11.1073 11.367 10.7644 11.0241C10.4214 10.6811 10.25 10.2692 10.25 9.78845C10.25 9.30768 10.4214 8.89583 10.7644 8.55288C11.1073 8.20993 11.5192 8.03845 12 8.03845C12.4807 8.03845 12.8926 8.20993 13.2356 8.55288C13.5785 8.89583 13.75 9.30768 13.75 9.78845C13.75 10.2692 13.5785 10.6811 13.2356 11.0241C12.8926 11.367 12.4807 11.5385 12 11.5385Z" fill="black" fill-opacity="0.4"></path></g>
+                </svg>
+              </span>
+              <span>
+                <a class="sider-bar-text">Quản trị</a>
+              </span>
+            </a>
+            <ul>
+              <li nz-menu-item [nzPaddingLeft]="!isCollapsed ? 44 : 0" class="button-list-item">
+                <a [routerLink]="['administrator/service-list']" class="sider-bar-text item-text">Camera</a>
+              </li>
+              <li nz-menu-item [nzPaddingLeft]="!isCollapsed ? 44 : 0" class="button-list-item">
+                <a [routerLink]="['/camera/','Quyền Camera']" class="sider-bar-text item-text">Quyền Camera (đang phát triển)</a>
+              </li>
+              <li nz-menu-item [nzPaddingLeft]="!isCollapsed ? 44 : 0" class="button-list-item">
+                <a [routerLink]="['/camera/','Thiết lập mặc định']" class="sider-bar-text item-text">Thiết lập mặc định (đang phát triển)</a>
+              </li>
+              <li nz-menu-item [nzPaddingLeft]="!isCollapsed ? 44 : 0" class="button-list-item">
+                <a [routerLink]="['/camera/','Công ty']" class="sider-bar-text item-text">Công ty (đang phát triển)</a>
+              </li>
+              <li nz-menu-item [nzPaddingLeft]="!isCollapsed ? 44 : 0" class="button-list-item">
+                <a [routerLink]="['/camera/','Kho']" class="sider-bar-text item-text">Kho (đang phát triển)</a>
+              </li>
+              <li nz-menu-item [nzPaddingLeft]="!isCollapsed ? 44 : 0" class="button-list-item">
+                <a [routerLink]="['/camera/','Nhóm Camera']" class="sider-bar-text item-text">Nhóm Camera (đang phát triển)</a>
+              </li>
+              <li nz-menu-item [nzPaddingLeft]="!isCollapsed ? 44 : 0" class="button-list-item">
+                <a [routerLink]="['/camera/', 'Thông báo']" class="sider-bar-text item-text">Thông báo (đang phát triển)</a>
+              </li>
+              <li nz-menu-item [nzPaddingLeft]="!isCollapsed ? 44 : 0" class="button-list-item">
+                <a [routerLink]="['/administrator/services']" class="sider-bar-text item-text">Dịch vụ</a>
+              </li>
+              <li nz-menu-item [nzPaddingLeft]="!isCollapsed ? 44 : 0" class="button-list-item">
+                <a [routerLink]="['/camera/', 'Người dùng']" class="sider-bar-text item-text">Người dùng (đang phát triển)</a>
+              </li>
+              <li nz-menu-item [nzPaddingLeft]="!isCollapsed ? 44 : 0" class="button-list-item">
+                <a [routerLink]="['/camera/','Quyền người dùng']" class="sider-bar-text item-text">Quyền người dùng (đang phát triển)</a>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+      <div aria-hidden="true" style="display: none;"></div>
+      <div class="sider-bar-small-button">
+        <a (click)="isCollapsed = !isCollapsed">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <g clip-path="url(#clip0_4472_13435)"><path d="M18 10H14V6" stroke="black" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path><path d="M20 4L14 10" stroke="black" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path><path d="M6 14H10V18" stroke="black" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path><path d="M10 14L4 20" stroke="black" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path></g><defs><clipPath id="clip0_4472_13435"><rect width="24" height="24" fill="black"></rect></clipPath></defs>
+          </svg>
+          <span nz-icon nzType="shrink" nzTheme="outline"></span>
+        </a>
+        <span nz-icon nzType="arrows-alt" nzTheme="outline"></span>
+        <span class="sider-bar-small-button-text" [ngStyle]="{'display': isCollapsed ? 'none':'block'}">
+          Thu nhỏ menu
+        </span>
+      </div>
+    </aside>
+  </div>
+
+  <nz-divider nzType="vertical" style="height: auto; margin: 0;"></nz-divider>
+
+  <div class="service">
+    <router-outlet></router-outlet>
+  </div>
+</div>

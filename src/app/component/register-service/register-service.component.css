@@ -1,0 +1,627 @@
+.container-full {
+    width: 100%;
+    /* height: 100%;
+    background-color: rgb(235, 235, 235); */
+}
+
+.container-text {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    height: 56px;
+    background: #FFFFFF;
+    padding-left: 10px;
+    gap: 4px;
+}
+
+.button-back {
+    display: flex;
+    align-items: center;
+}
+
+.container-text span {
+    height: 32px;
+    font-family: 'Averta Std CY';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 32px;
+    color: #000000;
+}
+
+.container-item {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    height: fit-content;
+    padding: 12px 15px;
+    justify-content: space-between;
+}
+
+.text {
+    display: block;
+    font-family: 'Averta Std CY';
+    font-style: normal;
+    font-size: 17px;
+    font-weight: 600;
+    margin: 5px 0;
+}
+
+/* Thông tin đăng ký */
+.item-info {
+    width: 65%;
+    height: fit-content;
+    padding: 17px 15px;
+    border-radius: 20px;
+    background-color: white;
+}
+
+.service-info {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+/* Thông tin dịch vụ */
+.service-item {
+    width: 48%;
+    height: fit-content;
+    padding: 20px;
+    margin-top: 10px;
+    display: flex;
+    flex-wrap: nowrap;
+    flex-direction: column;
+    gap: 10px;
+    border-radius: 24px;
+    background: #F7F8FC;
+    background-image: url(/assets/images/background.png);
+}
+
+.item-logo {
+    display: flex;
+    /* margin-top: 30px; */
+    justify-content: center;
+}
+
+.item-logo img {
+    display: block;
+    width: 100px;
+    height: 100px;
+}
+
+.item-text-price {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    /* margin-bottom: 20px; */
+}
+
+.item-text-price h5 {
+    margin-bottom: 0;
+    font-family: 'Averta Std CY';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 28px;
+    text-align: center;
+    color: #ACFCCF;
+}
+
+.item-text-price span {
+    font-family: 'Averta Std CY';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 24px;
+    text-align: center;
+    color: #FFFFFF;
+}
+
+.item-text-list {
+    display: flex;
+    flex-wrap: nowrap;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.item-text-line {
+    border: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+.item-text {
+    display: flex;
+    justify-content: space-between;
+}
+
+.text-name {
+    display: block;
+    text-align: start;
+}
+
+.text-name span{
+    font-family: 'Averta Std CY';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 20px;
+    color: rgba(255, 255, 255, 0.7);
+}
+
+.text-note {
+    display: block;
+    text-align: end;
+}
+
+.text-note span{
+    font-family: 'Averta Std CY';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 20px;
+    text-align: right;
+    color: #FFFFFF;
+}
+
+.item-content {
+    width: 48%;
+    display: flex;
+    padding: 0px;
+    margin-top: 10px;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.content-info {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    flex-wrap: nowrap;
+    padding: 0px;
+    gap: 4px;
+}
+
+.content-info span {
+    font-family: 'Averta Std CY';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 24px;
+    color: rgba(0, 0, 0, 0.4);
+}
+
+.content-info input {
+    width: 100%;
+    height: 36px;
+    font-size: 15px;
+    outline: none;
+    box-sizing: border-box;
+    background: rgba(0, 0, 0, 0.05);
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    font-family: 'Averta Std CY';
+    border-radius: 4px;
+    padding-left: 10px;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 24px;
+    color: rgba(0, 0, 0, 0.7);
+}
+
+.content-info:nth-of-type(4) input {
+    font-family: 'Averta Std CY';
+    background: rgba(255, 255, 255, 0.05);
+}
+
+.content-info-select {
+    width: 100%;
+    height: 36px !important;
+    font-size: 16px !important;
+    font-weight: 900;
+    line-height: 24px;
+    border-radius: 4px;
+    color: rgba(0, 0, 0, 0.7);
+    font-family: 'Averta Std CY';
+    background: rgba(0, 0, 0, 0.05);
+    ::ng-deep .ant-select-selector{
+        height: 36px;
+        display: flex;
+        align-items: center;
+    }
+}
+
+::ng-deep .ant-select-dropdown{
+    border-radius: 10px;
+    margin-top: 15px;
+}
+
+.service-pay {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.pay-info {
+    display: flex;
+    padding-bottom: 10px;
+    flex-wrap: nowrap;
+    flex-direction: column;
+}
+
+.pay-for {
+    width: 48%;
+    display: flex;
+    margin-top: 10px;
+    flex-direction: column;
+    align-items: flex-start;
+    flex-wrap: nowrap;
+    gap: 4px;
+}
+
+.pay-for span {
+    font-family: "Averta Std CY";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 24px;
+    color: rgba(0, 0, 0, 0.4);
+}
+
+.pay-for input {
+    width: 100%;
+    height: 30px;
+    font-size: 15px;
+    outline: none;
+    font-family: 'Averta Std CY';
+    box-sizing: border-box;
+    background-color: #FFFFFF;
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    border-radius: 4px;
+    padding-left: 10px;
+    font-weight: 400;
+    line-height: 24px;
+    color: rgba(0, 0, 0, 0.7);
+}
+
+.pay-for-select {
+    width: 100%;
+    height: 36px !important;
+    font-size: 16px !important;
+    font-weight: 400;
+    font-family: 'Averta Std CY';
+    color: rgba(0, 0, 0, 0.7);
+    background-color: #FFFFFF;
+}
+
+.pay-time {
+    width: 48%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-top: 10px;
+    flex-wrap: nowrap;
+    gap: 4px;
+}
+
+.pay-time-info {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    flex-wrap: nowrap;
+    gap: 4px;
+}
+
+.pay-time-info span {
+    font-family: "Averta Std CY";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 24px;
+    color: rgba(0, 0, 0, 0.4);
+}
+
+.pay-auto {
+    width: 100%;
+    display: flex;
+    flex-wrap: nowrap;
+    flex-direction: row;
+    align-items: center;
+    gap: 15px;
+}
+
+.pay-auto-input {
+    width: 50%;
+    height: 30px;
+    outline: none;
+    box-sizing: border-box;
+    background-color: #FFFFFF;
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    border-radius: 4px;
+    padding-left: 10px;
+    font-family: 'Averta Std CY';
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 24px;
+    color: rgba(0, 0, 0, 0.7);
+}
+
+.pay-auto-select {
+    width: 40%;
+    height: 36px !important;
+    font-family: 'Averta Std CY';
+    border-radius: 4px;
+    font-weight: 500;
+    font-size: 16px !important;
+    line-height: 24px;
+    color: rgba(0, 0, 0, 0.7);
+}
+
+.pay-auto-button {
+    /* width: 50%; */
+    display: flex;
+    flex-wrap: nowrap;
+    align-items: center;
+    gap: 12px;
+}
+
+.pay-auto-button-text span {
+    font-family: 'Averta Std CY';
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 24px;
+    text-align: left;
+    color: rgba(0, 0, 0, 0.6);
+}
+
+/* Thanh toán */
+.item-pay {
+    width: 34%;
+    height: fit-content;
+    padding: 17px 15px;
+    border-radius: 20px;
+    background-color: white;
+}
+
+.item-pay-price {
+    gap: 20px;
+    display: flex;
+    flex-wrap: nowrap;
+    flex-direction: column;
+    margin-top: 15px;
+}
+
+.item-discount {
+    gap: 12px;
+    height: fit-content;
+    display: flex;
+    padding: 10px 16px;
+    border-radius: 8px;
+    background: #F3F6FF;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.discount-text {
+    width: 100%;
+    display: flex;
+    /* flex-direction: row; */
+    justify-content: space-between;
+    align-items: center;
+    padding: 0px;
+    gap: 4px;
+    height: 24px;
+}
+
+.discount-text span {
+    /* width: 116px; */
+    height: 24px;
+    font-family: 'Averta Std CY';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 24px;
+    color: #0040FF;
+}
+
+.button-open {
+    display: flex;
+    align-items: end;
+}
+
+.discount-check {
+    width: 100%;
+    height: 50px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0px 8px 0px 12px;
+    background: #FFFFFF;
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    border-radius: 4px;
+}
+
+.discount-check input {
+    outline: none;
+    margin: 0 auto;
+    width: 100%;
+    height: 24px;
+    font-family: 'Averta Std CY';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 24px;
+    border: none;
+    color: rgba(0, 0, 0, 0.7);
+}
+
+.discount-check button {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 8px 16px;
+    color: #FFFFFF;
+    margin: 0 auto;
+    width: 60%;
+    height: 32px;
+    border-radius: 4px;
+    border: 1px rgba(0, 0, 0, 0.25) solid  ;
+}
+
+.item-price {
+    display: flex;
+    align-items: center;
+    /* margin-top: 12px; */
+    justify-content: space-between;
+}
+
+.item-price p {
+    margin: 0;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 20px;
+    font-style: normal;
+    color: rgba(0, 0, 0, 0.4);
+    font-family: 'Averta Std CY';
+}
+
+.item-price span {
+    font-family: 'Averta Std CY';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 20px;
+    text-align: right;
+    color: #000000;
+}
+
+.button-pay {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Averta Std CY';
+    padding: 12px 20px;
+    gap: 10px;
+    height: 40px;
+    background: #0040FF;
+    border-radius: 4px;
+}
+
+.button-pay a {
+    text-decoration: none;
+    font-family: 'Averta Std CY';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 24px;
+    color: #FFFFFF;
+}
+
+@media screen and (min-width: 1480px) {
+    .service-item {
+        width: 48%;
+        max-width: 30%;
+    }
+
+    .item-content {
+        width: 100%;
+        max-width: 68%;
+    }
+
+    .pay-for {
+        width: 48%;
+        max-width: 30%;
+    }
+
+    .pay-time {
+        width: 100%;
+        max-width: 68%;
+    }
+
+    .discount-check button {
+        width: 60%;
+        max-width: 160px;
+    }
+}
+
+@media screen and (min-width: 500px) and (max-width: 1000px){
+    .container-item {
+        justify-content: space-evenly;
+        height: fit-content;
+        /* gap: 15px; */
+    }
+
+    .item-info {
+        width: 100%;
+    }
+
+    .service-item {
+        width: 48%;
+    }
+
+    .item-content {
+        width: 48%;
+    }
+
+    .item-pay {
+        width: 100%;
+    }
+
+    .pay-info {
+        width: 48%;
+    }
+
+    .pay-time {
+        width: 48%;
+    }
+
+}
+
+@media screen and (max-width: 1000px){
+    .container-full {
+        height: fit-content;
+    }
+}
+
+@media screen and (max-width: 700px){
+    .container-item {
+        justify-content: space-evenly;
+        height: fit-content;
+        /* gap: 15px; */
+    }
+
+    .item-info {
+        width: 100%;
+    }
+
+    .service-info {
+        justify-content: center;
+    }
+
+    .service-item {
+        width: 300px;
+    }
+
+    .item-content {
+        width: 100%;
+    }
+
+    .item-pay {
+        width: 100%;
+    }
+
+    .pay-info {
+        width: 100%;
+    }
+
+    .pay-for {
+        width: 100%;
+    }
+
+    .pay-time {
+        width: 100%;
+    }
+}

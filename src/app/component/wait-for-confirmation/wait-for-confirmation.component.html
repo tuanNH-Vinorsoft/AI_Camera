@@ -1,0 +1,212 @@
+<div class="container-full">
+    <div class="container-text">
+        <a>Quản trị dịch vụ</a>
+    </div>
+
+    <nz-divider style="margin: 0;"></nz-divider>
+
+    <div class="container-list">
+        <div class="container-item">
+            <a [routerLink]="['/administrator/services']" class="item-link">
+                <span>Danh sách dịch vụ</span>
+            </a>
+        </div>
+        <div class="container-item">
+            <a [routerLink]="['/administrator/wait-for-confirmationComponent']" class="item-link">
+                <span>Chờ xác nhận (0)</span>
+            </a>
+        </div>
+        <div class="container-item">
+            <a [routerLink]="['/administrator/registered-service']" class="item-link">
+                <span>Dịch vụ đăng ký (0)</span>
+            </a>
+        </div>
+    </div>
+
+    <nz-divider style="margin: 0;"></nz-divider>
+
+    <div class="service-list">
+        <div class="service-sreach">
+            <div class="sreach-text">Tìm kiếm theo tên dịch vụ</div>
+            <div class="sreach-input">
+                <div class="input-button">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <g clip-path="url(#clip0_1_3127)">
+                        <path d="M10 17C13.866 17 17 13.866 17 10C17 6.13401 13.866 3 10 3C6.13401 3 3 6.13401 3 10C3 13.866 6.13401 17 10 17Z" stroke="black" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path d="M21 21L15 15" stroke="black" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                        </g>
+                        <defs>
+                        <clipPath id="clip0_1_3127">
+                        <rect width="24" height="24" fill="white"/>
+                        </clipPath>
+                        </defs>
+                    </svg>
+                </div>
+                <input type="text" placeholder="Nhập từ khoá" [(ngModel)]="nameSevices" (input)="onNameChange($event)">
+            </div>
+        </div>
+        <div class="service-table scoll-bar">
+            <div style="overflow: auto; width: 100%;" class="scoll-bar-ver">
+                <nz-table [nzData]="filteredServices" nzShowPagination="false">
+                    <thead>
+                        <tr >
+                            <th class="font-size-head">STT</th>
+                            <th class="font-size-head">Tên dịch vụ</th>
+                            <th class="font-size-head">Chất lượng ảnh</th>
+                            <th class="font-size-head"> Thời gian lưu trữ</th>
+                            <th class="font-size-head">Thời gian bắt đầu</th>
+                            <th class="font-size-head">Trạng thái gia hạn</th>
+                            <th class="font-size-head">
+                                <div style="
+                                width: 100%;
+                                display: flex;
+                                justify-content: end;
+                                ">
+                                    Tổng tiền
+                                </div>
+                            </th>
+                            <th class="font-size-head">Trạng thái</th>
+                            <th class="font-size-head">Action</th>
+                        </tr>
+                    </thead>
+                    <tbody class="font-size-body">
+                        <tr 
+                            *ngFor="let data of filteredServices | slice: (currentPage-1) * pageSize : currentPage * pageSize, let i=index" 
+                        >
+                            <td class="font-size-body">
+                                <div style="
+                                    width: 100%;
+                                    display: flex;
+                                    justify-content: center;
+                                    align-items: center;
+                                    text-align: center;
+                                ">
+                                    {{i+1}}
+                                </div>
+                            </td>
+                            <td class="font-size-body" >
+                                <div style="
+                                width: 100%;
+                                display: flex;
+                                align-items: center;
+                                text-align: center;
+                                ">
+                                    {{data.name}}
+                                </div>
+                            </td>
+                            <td class="font-size-body" >
+                                <div style="
+                                width: 100%;
+                                display: flex;
+                                align-items: center;
+                                text-align: center;
+                                ">
+                                    {{data.img}}
+                                </div>
+                            </td>
+                            <td class="font-size-body" >
+                                <div style="
+                                width: 100%;
+                                display: flex;
+                                align-items: center;
+                                text-align: center;
+                                ">
+                                    {{data.timeSave}}
+                                </div>
+                            </td>
+                            <td class="font-size-body" >
+                                <div style="
+                                width: 100%;
+                                display: flex;
+                                align-items: center;
+                                text-align: center;
+                                ">
+                                    {{data.timeStart}}
+                                </div>
+                            </td>
+                            <td class="font-size-body" >
+                                <div *ngIf="data.extensionStatus" style="display: flex; gap: 8px; align-items: center;">
+                                    <div style="display: flex; align-items: center;">
+                                        <img src="/assets/icon/on.png" alt="">
+                                    </div>
+                                    <span style="font-size: 14px; font-weight: 400; line-height: 20px; color: #32D022;">Gia hạn</span>
+                                </div>
+                                <div *ngIf="!data.extensionStatus"  style="display: flex; gap: 8px; align-items: center;">
+                                    <div style="display: flex; align-items: center;">
+                                        <img src="/assets/icon/off.png" alt="">
+                                    </div>
+                                    <span style="font-size: 14px; font-weight: 400; line-height: 20px; color: rgba(0, 0, 0, 0.4);">Không</span>
+                                </div>
+                            </td>
+                            <td class="font-size-body" >
+                                <div style="
+                                width: 100%;
+                                display: flex;
+                                justify-content: end;
+                                ">
+                                    {{data.price}}
+                                </div>
+                            </td>
+                            <td class="font-size-body" >
+                                <div style="
+                                width: 100%;
+                                display: flex;
+                                justify-content: start;
+                                ">
+                                    <div *ngIf="data.staus == 1" style="display: flex; gap: 8px;">
+                                        <div>
+                                            <span nz-icon nzType="exclamation-circle" nzTheme="outline" 
+                                                style="font-size: 24px; color: white; background-color: #F25B60; border-radius: 100%;"
+                                            ></span>
+                                        </div>
+                                        <span style="font-size: 14px; font-weight: 400; line-height: 20px; color: #F25B60;">Từ chối</span>
+                                    </div>
+                                    <div *ngIf="data.staus == 2" style="display: flex; gap: 8px;">
+                                        <div>
+                                            <span nz-icon nzType="check-circle" nzTheme="outline"
+                                                style="font-size: 24px; color: white; background-color: #32D022; border-radius: 100%; overflow: hidden;"
+                                            ></span>
+                                        </div>
+                                        <span style="font-size: 14px; font-weight: 400; line-height: 20px; color: #32D022;">Chờ xác nhận</span>
+                                    </div>
+                                    <div *ngIf="data.staus == 3" style="display: flex; gap: 8px;">
+                                        <div>
+                                            <span nz-icon nzType="close-circle" nzTheme="outline"
+                                                style="font-size: 24px; color: white; background-color: rgba(0, 0, 0, 0.4); border-radius: 100%;"
+                                            ></span>
+                                        </div>
+                                        <span style="font-size: 14px; font-weight: 400; line-height: 20px; color: rgba(0, 0, 0, 0.4);">Đã huỷ</span>
+                                    </div>
+                                </div>
+                            </td>
+                            <td class="font-size-body">
+                                <div style="
+                                width: 100%;
+                                display: block;
+                                align-items: center;
+                                text-align: center;
+                                ">
+                                    <a>
+                                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <g clip-path="url(#clip0_3279_29610)"><path d="M4 7H20" stroke="#FF3300" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path><path d="M10 11V17" stroke="#FF3300" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path><path d="M14 11V17" stroke="#FF3300" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path><path d="M5 7L6 19C6 19.5304 6.21071 20.0391 6.58579 20.4142C6.96086 20.7893 7.46957 21 8 21H16C16.5304 21 17.0391 20.7893 17.4142 20.4142C17.7893 20.0391 18 19.5304 18 19L19 7" stroke="#FF3300" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path><path d="M9 7V4C9 3.73478 9.10536 3.48043 9.29289 3.29289C9.48043 3.10536 9.73478 3 10 3H14C14.2652 3 14.5196 3.10536 14.7071 3.29289C14.8946 3.48043 15 3.73478 15 4V7" stroke="#FF3300" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path></g><defs><clipPath id="clip0_3279_29610"><rect width="24" height="24" fill="white"></rect></clipPath></defs>
+                                        </svg>
+                                    </a>
+                                </div>
+                            </td>
+                        </tr>
+                    </tbody>
+                </nz-table>
+            </div>
+        </div>
+        <div class="list-pagination">
+            <app-pagination
+                [currentPage]="currentPage"
+                [pages]="(filteredServices.length/pageSize + 1)"
+                [isFullScreen]="isFullScreen"
+                (pageClick)="handlePageClick($event)"
+                (next)="handleNext(filteredServices.length/pageSize)"
+                (previous)="handlePrevious()"
+            ></app-pagination>
+        </div>
+    </div>
+</div>

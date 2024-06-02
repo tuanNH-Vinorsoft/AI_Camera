@@ -1,0 +1,228 @@
+<div class="container-full">
+    <div class="container-text">
+        <a class="button-back" [routerLink]="['/administrator']">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <g clip-path="url(#clip0_1_2647)">
+                <path d="M15 6L9 12L15 18" stroke="black" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                </g>
+                <defs>
+                <clipPath id="clip0_1_2647">
+                <rect width="24" height="24" fill="white"/>
+                </clipPath>
+                </defs>
+            </svg>
+        </a>
+        <span>Xác nhận đăng ký</span>
+    </div>
+
+    <nz-divider style="margin: 0;"></nz-divider>
+
+    <div class="container-item">
+        <div class="item-info">
+            <span class="text">Thông tin thanh toán</span>
+
+            <div class="service-info">
+                <!-- Thông tin dịch vụ -->
+                <div class="service-item">
+                    <div style="
+                        display: flex;
+                        flex-wrap: nowrap;
+                        flex-direction: column;
+                        gap: 30px;
+                    ">
+                        <div class="item-logo">
+                            <img src="/assets/images/run.png" alt="">
+                        </div>
+                        <div class="item-text-price">
+                            <h5>Phát hiện chuyển động</h5>
+                            <span>50.000đ / tháng</span>
+                        </div>
+                    </div>
+                    <div class="item-text-list">
+                        <div class="item-text-line"></div>
+                        <div class="item-text">
+                            <div class="text-name">
+                                <span>Tên dịch vụ</span>
+                            </div>
+                            <div class="text-note">
+                                <span>Phát hiện chuyển động</span>
+                            </div>
+                        </div>
+                        <div class="item-text-line"></div>
+                        <div class="item-text">
+                            <div class="text-name">
+                                <span>Trạng thái</span>
+                            </div>
+                            <div class="text-note">
+                                <span>Chưa đăng ký</span>
+                            </div>
+                        </div>
+                        <div class="item-text-line"></div>
+                        <div class="item-text">
+                            <div class="text-name">
+                                <span>Cho phép cấu hình</span>
+                            </div>
+                            <div class="text-note">
+                                <span>Có</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Thông tin đăng ký -->
+                <div class="item-content">
+                    <div class="content-info">
+                        <span>Tên tài khoản</span>
+                        <input type="text" readonly value="highlands_coffee.123">
+                    </div>
+                    <div class="content-info">
+                        <span>Tên công ty</span>
+                        <input type="text" readonly value="Highlands Coffee">
+                    </div>
+                    <div class="content-info">
+                        <span>Chất lượng hình ảnh</span>
+                        <nz-select class="content-info-select" ngModel="720" nzPlaceHolder="720" >
+                            <nz-option nzValue="1080" nzLabel="1080"></nz-option>
+                            <nz-option nzValue="720" nzLabel="720"></nz-option>
+                            <nz-option nzValue="480" nzLabel="480"></nz-option>
+                            <nz-option nzValue="360" nzLabel="360"></nz-option>
+                            <nz-option nzValue="240" nzLabel="240"></nz-option>
+                            <nz-option nzValue="144" nzLabel="144"></nz-option>
+                        </nz-select>
+                    </div>
+                    <div class="content-info">
+                        <div style="display: flex; gap: 3px">
+                            <span>
+                                Thời gian lưu trữ 
+                            </span>
+                            <span style="display: flex; cursor: pointer;">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <g clip-path="url(#clip0_1_2745)">
+                                    <path d="M12 21C16.9706 21 21 16.9706 21 12C21 7.02944 16.9706 3 12 3C7.02944 3 3 7.02944 3 12C3 16.9706 7.02944 21 12 21Z" fill="#fff" stroke="rgba(0, 0, 0, 0.4)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                    <path d="M12 8H12.01" stroke="rgba(0, 0, 0, 0.4)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                    <path d="M11 12H12V16H13" stroke="rgba(0, 0, 0, 0.4)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                    </g>
+                                    <defs>
+                                    <clipPath id="clip0_1_2745">
+                                    <rect width="24" height="24" fill="white"/>
+                                    </clipPath>
+                                    </defs>
+                                </svg>  
+                            </span>
+                        </div>
+                        <input ngModel="inpuDate <= 14" type="number" placeholder="Nhập số ngày lưu trữ" max="14">
+                    </div>
+                    <div class="content-info">
+                        <span>Thời gian bắt đầu</span>
+                        <input type="date">
+                    </div>
+                </div>
+            </div>
+
+            <div class="service-pay">
+                <div class="pay-for">
+                    <span>Phương thức thanh toán</span>
+                    <!-- <input type="text" placeholder="Chuyển khoản ngân hàng"> -->
+                    <nz-select class="pay-for-select" ngModel="Chuyển khoản ngân hàng" nzPlaceHolder="Chuyển khoản ngân hàng" >
+                        <nz-option nzValue="Chuyển khoản ngân hàng" nzLabel="Chuyển khoản ngân hàng"></nz-option>
+                        <nz-option nzValue="MoMo" nzLabel="MoMo"></nz-option>
+                        <nz-option nzValue="Tiền mặt" nzLabel="Tiền mặt"></nz-option>
+                    </nz-select>
+                </div>
+                <div class="pay-time">
+                    <div class="pay-time-info">
+                        <span>Tự động gia hạn</span>
+                        <div class="pay-auto">
+                            <nz-select class="pay-auto-select" ngModel="1 tháng" nzPlaceHolder="1 tháng">
+                                <nz-option nzValue="1 tháng" nzLabel="1 tháng"></nz-option>
+                                <nz-option nzValue="2 tháng" nzLabel="2 tháng"></nz-option>
+                                <nz-option nzValue="3 tháng" nzLabel="3 tháng"></nz-option>
+                                <nz-option nzValue="4 tháng" nzLabel="4 tháng"></nz-option>
+                                <nz-option nzValue="5 tháng" nzLabel="5 tháng"></nz-option>
+                                <nz-option nzValue="6 tháng" nzLabel="6 tháng"></nz-option>
+                                <nz-option nzValue="7 tháng" nzLabel="7 tháng"></nz-option>
+                                <nz-option nzValue="8 tháng" nzLabel="8 tháng"></nz-option>
+                                <nz-option nzValue="9 tháng" nzLabel="9 tháng"></nz-option>
+                                <nz-option nzValue="10 tháng" nzLabel="10 tháng"></nz-option>
+                                <nz-option nzValue="11 tháng" nzLabel="11 tháng"></nz-option>
+                                <nz-option nzValue="12 tháng" nzLabel="12 tháng"></nz-option>
+                            </nz-select>
+                            <div class="pay-auto-button">
+                                <nz-switch [(ngModel)]="switchValue"></nz-switch> 
+                                <div class="pay-auto-button-text" >
+                                    <span *ngIf="switchValue">Tự động</span>
+                                    <span *ngIf="!switchValue">Không gia hạn</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="item-pay">
+            <span class="text">Tóm tắt đơn hàng</span>
+            <div class="item-pay-price">
+                <div class="item-discount">
+                    <div class="discount-text">
+                        <span>Mã khuyến mãi</span>
+                        <a class="button-open" (click)="!switchInput = !switchInput">
+                            <svg *ngIf="!switchInput" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <g clip-path="url(#clip0_1_2769)">
+                                <path d="M6 9L12 15L18 9" stroke="#0040FF" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                </g>
+                                <defs>
+                                <clipPath id="clip0_1_2769">
+                                <rect width="24" height="24" fill="white"/>
+                                </clipPath>
+                                </defs>
+                            </svg>
+                            <svg *ngIf="switchInput" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <g clip-path="url(#clip0_1_2906)">
+                                <path d="M6 15L12 9L18 15" stroke="#0040FF" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                </g>
+                                <defs>
+                                <clipPath id="clip0_1_2906">
+                                <rect width="24" height="24" fill="white"/>
+                                </clipPath>
+                                </defs>
+                            </svg>
+                        </a>
+                    </div>
+                    <div *ngIf="switchInput" class="discount-check">
+                        <input [(ngModel)]="code" type="text" placeholder="Nhập mã">
+                        <button 
+                            nz-button 
+                            [disabled]="code ? false : true"
+                            (click)="checkVoucher = !checkVoucher"
+                            [ngStyle]="{'background-color': code ? '#0040FF' : 'rgba(0, 0, 0, 0.25)'}"
+                        >
+                            Xác nhận
+                        </button>
+                    </div>
+                </div>
+                <div class="item-price">
+                    <p>Tạm tính</p>
+                    <span>{{price}}.000 đ</span>
+                </div>
+                <div class="item-price">
+                    <p>Phí</p>
+                    <span>0 đ</span>
+                </div>
+                <div class="item-price">
+                    <p>Khuyến mại</p>
+                    <span *ngIf="!checkVoucher">0 đ</span>
+                    <span *ngIf="checkVoucher">{{voucher}}.000 đ</span>
+                </div>
+                <div class="item-price">
+                    <p>Tổng tiền</p>
+                    <span *ngIf="!checkVoucher">{{price}}.000 đ</span>
+                    <span *ngIf="checkVoucher">{{price - voucher}}.000 đ</span>
+                </div>
+                <div class="button-pay">
+                    <a [routerLink]="['/pay']">Thanh toán</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

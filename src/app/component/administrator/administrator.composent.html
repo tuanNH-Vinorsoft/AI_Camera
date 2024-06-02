@@ -1,0 +1,254 @@
+<div class="container-full">
+    <div class="container-text">
+        <a  [routerLink]="['/administrator']">Quản trị dịch vụ</a>
+    </div>
+
+    <nz-divider style="margin: 0;"></nz-divider>
+
+    <div class="container-list">
+        <div class="container-item">
+            <a [routerLink]="['/administrator/service-list']" class="item-link">
+                <span>Danh sách dịch vụ</span>
+            </a>
+        </div>
+        <div class="container-item">
+            <a [routerLink]="['/administrator/wait-for-confirmation']" class="item-link">
+                <span>Chờ xác nhận (0)</span>
+            </a>
+        </div>
+        <div class="container-item">
+            <a [routerLink]="['/administrator/registered-service']" class="item-link">
+                <span>Dịch vụ đăng ký (0)</span>
+            </a>
+        </div>
+    </div>
+
+    <nz-divider style="margin: 0;"></nz-divider>
+
+    <div style="
+        width: 100%;
+        display: flex;
+        padding: 30px 10px;
+        justify-content: center;
+    ">
+        <div class="service-list">
+            <!-- Phát hiện chuyển động -->
+            <div class="service-item">
+                <div style="
+                    display: flex;
+                    flex-wrap: nowrap;
+                    flex-direction: column;
+                ">
+                    <div class="item-logo">
+                        <img src="/assets/images/run.svg" alt="Phát hiện chuyển động">  
+                    </div>
+                    <div class="item-text-price">
+                        <h5>Phát hiện chuyển động</h5>
+                        <span>50.000đ / tháng</span>
+                    </div>
+                    <div class="item-text-list">
+                        <div class="item-text-line"></div>
+                        <div class="item-text">
+                            <div class="text-name">
+                                <span>Tên dịch vụ</span>
+                            </div>
+                            <div class="text-note">
+                                <span>Phát hiện chuyển động</span>
+                            </div>
+                        </div>
+                        <div class="item-text-line"></div>
+                        <div class="item-text">
+                            <div class="text-name">
+                                <span>Trạng thái</span>
+                            </div>
+                            <div class="text-note">
+                                <span>Chưa đăng ký</span>
+                            </div>
+                        </div>
+                        <div class="item-text-line"></div>
+                        <div class="item-text">
+                            <div class="text-name">
+                                <span>Cho phép cấu hình</span>
+                            </div>
+                            <div class="text-note">
+                                <span>Có</span>
+                            </div>
+                        </div>
+                        <div class="item-text-line"></div>
+                    </div>
+                </div>
+                <div class="item-button">
+                    <div class="button">
+                        <a [routerLink]="['/administrator/register-service/',0]">Đăng ký</a>
+                    </div>
+                </div>
+            </div>
+    
+            <!-- Nhận diện khuôn mặt -->
+            <div class="service-item">
+                <div style="
+                    display: flex;
+                    flex-wrap: nowrap;
+                    flex-direction: column;
+                ">
+                    <div class="item-logo">
+                        <img src="/assets/images/face.svg" alt="Phát hiện chuyển động">  
+                    </div>
+                    <div class="item-text-price">
+                        <h5>Nhận diện khuôn mặt</h5>
+                        <span>50.000đ / tháng</span>
+                    </div>
+                    <div class="item-text-list">
+                        <div class="item-text-line"></div>
+                        <div class="item-text">
+                            <div class="text-name">
+                                <span>Tên dịch vụ</span>
+                            </div>
+                            <div class="text-note">
+                                <span>Phát hiện chuyển động</span>
+                            </div>
+                        </div>
+                        <div class="item-text-line"></div>
+                        <div class="item-text">
+                            <div class="text-name">
+                                <span>Trạng thái</span>
+                            </div>
+                            <div class="text-note">
+                                <span>Chưa đăng ký</span>
+                            </div>
+                        </div>
+                        <div class="item-text-line"></div>
+                        <div class="item-text">
+                            <div class="text-name">
+                                <span>Cho phép cấu hình</span>
+                            </div>
+                            <div class="text-note">
+                                <span>Có</span>
+                            </div>
+                        </div>
+                        <div class="item-text-line"></div>
+                    </div>
+                </div>
+                <div class="item-button">
+                    <div class="button-cancel">
+                        <a [routerLink]="['/administrator',0]">Huỷ đăng ký</a>
+                    </div>
+                </div>
+            </div>
+    
+            <!-- Phát hiện con người -->
+            <div class="service-item">
+                <div style="
+                    display: flex;
+                    flex-wrap: nowrap;
+                    flex-direction: column;
+                ">
+                    <div class="item-logo">
+                        <img src="/assets/images/target.svg" alt="Phát hiện chuyển động">  
+                    </div>
+                    <div class="item-text-price">
+                        <h5>Phát hiện con người</h5>
+                        <span>50.000đ / tháng</span>
+                    </div>
+                    <div class="item-text-list">
+                        <div class="item-text-line"></div>
+                        <div class="item-text">
+                            <div class="text-name">
+                                <span>Tên dịch vụ</span>
+                            </div>
+                            <div class="text-note">
+                                <span>Phát hiện chuyển động</span>
+                            </div>
+                        </div>
+                        <div class="item-text-line"></div>
+                        <div class="item-text">
+                            <div class="text-name">
+                                <span>Trạng thái</span>
+                            </div>
+                            <div class="text-note">
+                                <span>Chưa đăng ký</span>
+                            </div>
+                        </div>
+                        <div class="item-text-line"></div>
+                        <div class="item-text">
+                            <div class="text-name">
+                                <span>Cho phép cấu hình</span>
+                            </div>
+                            <div class="text-note">
+                                <span>Có</span>
+                            </div>
+                        </div>
+                        <div class="item-text-line"></div>
+                    </div>
+                </div>
+                <div class="item-button">
+                    <div class="button">
+                        <a [routerLink]="['/administrator',0]">Đăng ký</a>
+                    </div>
+                </div>
+            </div>
+    
+            <!-- Dịch vụ lưu trữ -->
+            <div class="service-item">
+                <div style="
+                    display: flex;
+                    flex-wrap: nowrap;
+                    flex-direction: column;
+                ">
+                    <div class="item-logo">
+                        <img src="/assets/images/management.svg" alt="Phát hiện chuyển động">  
+                    </div>
+                    <div class="item-text-price">
+                        <h5>iCould lưu trữ</h5>
+                        <span>50.000đ / tháng</span>
+                    </div>
+                    <div class="item-text-list">
+                        <div class="item-text-line"></div>
+                        <div class="item-text">
+                            <div class="text-name">
+                                <span>Tên dịch vụ</span>
+                            </div>
+                            <div class="text-note">
+                                <span>iCould lưu trữ</span>
+                            </div>
+                        </div>
+                        <div class="item-text-line"></div>
+                        <div class="item-text">
+                            <div class="text-name">
+                                <span>Dung lượng lưu trữ</span>
+                            </div>
+                            <div class="text-note">
+                                <span>3GB - 100GB</span>
+                            </div>
+                        </div>
+                        <div class="item-text-line"></div>
+                        <div class="item-text">
+                            <div class="text-name">
+                                <span>Trạng thái</span>
+                            </div>
+                            <div class="text-note">
+                                <span>Chưa đăng ký</span>
+                            </div>
+                        </div>
+                        <div class="item-text-line"></div>
+                        <div class="item-text">
+                            <div class="text-name">
+                                <span>Cho phép cấu hình</span>
+                            </div>
+                            <div class="text-note">
+                                <span>Có</span>
+                            </div>
+                        </div>
+                        <div class="item-text-line"></div>
+                    </div>
+                </div>
+                <div class="item-button">
+                    <div class="button">
+                        <a [routerLink]="['/administrator',0]">Đăng ký</a>
+                    </div>
+                </div>
+            </div>
+    
+        </div>
+    </div>
+</div>
